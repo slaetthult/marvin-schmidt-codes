@@ -1,0 +1,61 @@
+@theme {
+    --color-white:                  #FFF;
+
+    --color-light-grey:             #F5F7FA;
+    --color-border-grey:            #7D8287;
+    --color-grey:                   #7D8287;
+
+    --color-black:                  #2C2F33;
+
+    --color-red:                    #D24436;
+    --color-orange:                 #B85318;
+    --color-green-yellow:           #807533;
+    --color-dark-green:             #03795D;
+    --color-water-blue:             #0F7AA1;
+    --color-purple:                 #884FCC;
+
+    --color-ui-green:               #009900;
+    --color-ui-red:                 #dc0030;
+
+    --color-green:                  #A8E6CF;
+    --color-blue:                   #6B7C93;
+
+    --color-main-background:        #2C2F33;
+
+    --color-font:                   #FFF;
+    --color-links:                  #FFF;
+    --color-links-hover:            #A8E6CF;
+
+    --font-primary:                 "Poppins", Arial, sans-serif;
+    --font-secondary:               "Space Grotesk", "Times New Roman", serif;
+
+    --text-16:                      1rem;
+    --text-18:                      1.125rem;
+    --text-20:                      1.25rem;
+    --text-22:                      1.375rem;
+    --text-24:                      1.5rem;
+    --text-30:                      1.875rem;
+    --text-32:                      2rem;
+    --text-40:                      2.5rem;
+    --text-48:                      3rem;
+    --text-64:                      4rem;
+    --text-96:                      6rem;
+
+    --leading-18:                   1.125rem;
+    --leading-30:                   1.875rem;
+    --leading-32:                   2rem;
+    --leading-40:                   2.5rem;
+    --leading-50:                   3.125rem;
+    --leading-56:                   3.5rem;
+    --leading-66:                   4.125rem;
+    --leading-90:                   5.625rem;
+
+    --tracking-1: 0.0625rem; /* 1px */
+    --tracking-2: 0.125rem; /* 2px */
+
+    --grid-max-width:               1440px;
+    --spacing:                      0.0625rem;
+
+    --default-transition-duration:  400ms;
+    --tw-duration:                  400ms;
+}

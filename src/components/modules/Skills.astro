@@ -1,0 +1,54 @@
+---
+
+import Accordion from "@components/partials/Accordion.astro";
+---
+
+<section class="skills module" aria-labelledby="skills-title" id="skills" role="region">
+    <div class="grid">
+        <div class="col-span-full lg:flex lg:flex-wrap">
+            <h2 id="skills-title" class="w-full">Skills</h2>
+            <Accordion className="bg-red text-white" openInitially={true}>
+                <Fragment slot="title">
+                    Core Frontend
+                </Fragment>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                </ul>
+            </Accordion>
+
+            <Accordion className="bg-orange text-white">
+                <Fragment slot="title">
+                    Frameworks
+                </Fragment>
+                <p>Ich bin der Inhalt 2</p>
+            </Accordion>
+            <Accordion className="bg-green-yellow text-white">
+                <Fragment slot="title">
+                    Templating
+                </Fragment>
+                <p>Ich bin der Inhalt 2</p>
+            </Accordion>
+            <Accordion className="bg-dark-green text-white">
+                <Fragment slot="title">
+                    CMS & E-Commerce
+                </Fragment>
+                <p>Ich bin der Inhalt 2</p>
+            </Accordion>
+            <Accordion className="bg-water-blue text-white">
+                <Fragment slot="title">
+                    Tools & Integrationen
+                </Fragment>
+                <p>Ich bin der Inhalt 2</p>
+            </Accordion>
+            <Accordion className="bg-purple text-white">
+                <Fragment slot="title">
+                    Sonstiges
+                </Fragment>
+                <p>Ich bin der Inhalt 2</p>
+            </Accordion>
+
+        </div>
+    </div>
+</section>

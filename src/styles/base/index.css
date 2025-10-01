@@ -1,0 +1,208 @@
+@layer base {
+
+    /* -------------------------------------------------------- */
+    /*                     SITE BASEMENT                        */
+    /* -------------------------------------------------------- */
+
+    html {
+        body {
+
+        }
+    }
+
+    /* -------------------------------------------------------- */
+    /*                          GRID                            */
+    /* -------------------------------------------------------- */
+
+    .grid {
+        @apply
+        px-10 gap-x-20 max-w-[var(--grid-max-width)] mx-auto grid-cols-6 w-full
+        lg:grid-cols-12 lg:px-20;
+    }
+
+    /* -------------------------------------------------------- */
+    /*                       HEADLINES                          */
+    /* -------------------------------------------------------- */
+
+    h1,.h1,
+    h2,.h2,
+    h3,.h3,
+    h4,.h4,
+    h5,.h5,
+    h6,.h6 {
+        @apply
+        font-secondary text-white font-light;
+    }
+
+    h1 a,.h1 a,
+    h1 strong,.h1 strong,
+    h2 a,.h2 a,
+    h2 strong,.h2 strong,
+    h3 a,.h3 a,
+    h3 strong,.h3 strong,
+    h4 a,.h4 a,
+    h4 strong,.h4 strong {
+        @apply
+        inline static text-[inherit] font-[inherit] leading-[inherit];
+    }
+
+    h1, .h1 {
+        @apply
+        text-64 leading-66
+        lg:text-96 lg:leading-90;
+    }
+
+    h2, .h2 {
+        @apply
+        text-40 leading-50
+        lg:text-48 lg:leading-56;
+    }
+
+    h3, .h3 {
+        @apply
+        text-30 leading-30
+        lg:text-40 lg:leading-40;
+    }
+
+    h4, .h4 {
+        @apply
+        text-20 leading-18
+        lg:text-32 lg:leading-32;
+    }
+
+    h5, .h5 {
+
+    }
+
+    h6, .h6 {
+
+    }
+
+    /* -------------------------------------------------------- */
+    /*                        BUTTONS                           */
+    /* -------------------------------------------------------- */
+
+    button[disabled], .button[disabled] {
+        @apply
+        pointer-events-none opacity-50 shadow-none;
+    }
+
+    button:not([disabled]):hover, .button:not([disabled]):hover,
+    button:not([disabled]):active, .button:not([disabled]):active,
+    button:not([disabled]):focus, .button:not([disabled]):focus {
+        @apply
+        shadow-none;
+    }
+
+    /* -------------------------------------------------------- */
+    /*                         LINKS                            */
+    /* -------------------------------------------------------- */
+
+    a:not(.button),
+    .link {
+        @apply
+        underline transition-colors;
+    }
+
+    a:not(.button):hover,
+    .link:hover {
+        @apply
+        text-green;
+    }
+
+    /* -------------------------------------------------------- */
+    /*                      GENERAL TAGS                        */
+    /* -------------------------------------------------------- */
+
+    p {
+
+    }
+
+    figure img {
+        @apply
+        w-full;
+    }
+
+    .figure-full-image img {
+        @apply
+        w-full h-[100%] object-cover object-center;
+    }
+
+    .figure-contain-image img {
+        @apply
+        w-full h-[100%] object-contain object-center;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="number"],
+    input[type="email"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="url"],
+    textarea {
+        @apply
+        border-1 w-full px-10 py-6 text-base;
+    }
+
+    input[type="text"]::placeholder,
+    input[type="password"]::placeholder,
+    input[type="number"]::placeholder,
+    input[type="email"]::placeholder,
+    input[type="search"]::placeholder,
+    input[type="tel"]::placeholder,
+    input[type="url"]::placeholder,
+    textarea::placeholder {
+
+    }
+
+    textarea {
+        @apply
+        w-full;
+    }
+
+    strong, b {
+        @apply
+        font-normal;
+    }
+
+    sup {
+        font-size: .875em;
+        vertical-align: super;
+        line-height: .875em;
+    }
+
+    small {
+        font-size: .875em;
+    }
+
+    strike, del {
+        text-decoration: line-through;
+    }
+
+    pre,
+    code,
+    kbd,
+    samp {
+
+    }
+
+    pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+
+    blockquote {
+        padding: 10px;
+        font-style: italic;
+    }
+
+    iframe {
+        max-width: 100%;
+    }
+
+    ::selection {
+        @apply
+        bg-blue text-white opacity-100;
+    }
+}

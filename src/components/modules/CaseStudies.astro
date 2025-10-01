@@ -1,0 +1,156 @@
+---
+import Swiper from "@components/partials/Swiper.astro";
+import Image from "@components/partials/Image.astro";
+import IconArrowRight from "@components/icons/IconArrowRight.astro";
+import IconArrowLeft from "@components/icons/IconArrowLeft.astro";
+import Button from "../partials/Button.astro";
+
+const swiperSettings = {
+    loop: false,
+    speed: 1500,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    autoplay: {
+        delay: 10000
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction',
+    },
+    breakpoints: {
+        1024: {
+            spaceBetween: '14%'
+        },
+        1100: {
+            spaceBetween: '13.9%'
+        },
+        1180: {
+            spaceBetween: '13.8%'
+        },
+        1240: {
+            spaceBetween: '13.7%'
+        },
+        1280: {
+            spaceBetween: '13.6%'
+        },
+        1340: {
+            spaceBetween: '13.5%'
+        },
+        1380: {
+            spaceBetween: '13.4%'
+        },
+        1440: {
+            spaceBetween: 138
+        }
+    }
+}
+
+const swiperSettingsJSON = JSON.stringify(swiperSettings);
+---
+<section class="case-studies module overflow-hidden" id="cases" aria-labelledby="case-studies-title" role="region">
+    <div class="grid relative">
+        <h2 id="case-studies-title" class="col-span-full mb-20">Case Studies</h2>
+        <em class="col-span-full h4 not-italic font-light mb-10 lg:absolute lg:top-600 lg-left-0">Featured</em>
+        <div class="col-span-5 lg:col-span-9 relative">
+            <Swiper className="!overflow-visible !static" swiperSettings={swiperSettingsJSON}>
+                <div class="swiper-slide">
+                    <div class="grid px-0 grid-cols-9">
+                        <figure class="col-span-full h-300 lg:h-541 figure-contain-image mb-80 bg-white">
+                            <Image
+                                    src="/images/project1.png"
+                                    width="300"
+                                    height="300"
+                                    sizes={[
+                                        {
+                                            viewportWidth: 450,
+                                            imageWidth: 768
+                                        },
+                                        {
+                                            viewportWidth: 320,
+                                            imageWidth: 450
+                                        }
+                                    ]}
+                                    loading="lazy"
+                                    alt="A description of my image."
+                            />
+                        </figure>
+                        <div class="col-span-full lg:col-span-5 lg:col-start-4 transition-opacity duration-1500 ease-in-out opacity-0 [.swiper-slide-active_&]:opacity-100">
+                            <strong class="font-secondary font-light block mb-8">Corporate-Seite mit Shop</strong>
+                            <h3 class="mb-20">Holtzbrinck Buchverlage</h3>
+                            <Button href="/" icon="link">Website besuchen</Button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="grid px-0 grid-cols-9">
+                        <figure class="col-span-full h-300 lg:h-541 figure-contain-image mb-80 bg-white">
+                            <Image
+                                    src="/images/project3.png"
+                                    width="300"
+                                    height="300"
+                                    sizes={[
+                                        {
+                                            viewportWidth: 450,
+                                            imageWidth: 768
+                                        },
+                                        {
+                                            viewportWidth: 320,
+                                            imageWidth: 450
+                                        }
+                                    ]}
+                                    loading="lazy"
+                                    alt="A description of my image."
+                            />
+                        </figure>
+                        <div class="col-span-full lg:col-span-5 lg:col-start-4 transition-opacity duration-1500 ease-in-out opacity-0 [.swiper-slide-active_&]:opacity-100">
+                            <strong class="font-secondary font-light block mb-8">Corporate-Seite</strong>
+                            <h3 class="mb-20">Die Welt von Steiff</h3>
+                            <Button href="https://corporate.steiff.com/de/" icon="link" target="_blank">Website besuchen</Button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="grid px-0 grid-cols-9">
+                        <figure class="col-span-full h-300 lg:h-541 figure-contain-image mb-80 bg-white">
+                            <Image
+                                    src="/images/project2.png"
+                                    width="300"
+                                    height="300"
+                                    sizes={[
+                                        {
+                                            viewportWidth: 450,
+                                            imageWidth: 768
+                                        },
+                                        {
+                                            viewportWidth: 320,
+                                            imageWidth: 450
+                                        }
+                                    ]}
+                                    loading="lazy"
+                                    alt="A description of my image."
+                            />
+                        </figure>
+                        <div class="col-span-full lg:col-span-5 lg:col-start-4 transition-opacity duration-1500 ease-in-out opacity-0 [.swiper-slide-active_&]:opacity-100">
+                            <strong class="font-secondary font-light block mb-8">Plattform für Immobilien</strong>
+                            <h3 class="mb-20">Aengevelt Immobilien</h3>
+                            <Button href="https://www.aengevelt.com/" icon="link" target="_blank">Website besuchen</Button>
+                        </div>
+                    </div>
+                </div>
+                <Fragment slot="pagination">
+                    <div class="swiper-pagination !absolute whitespace-nowrap !-right-52 lg:!-right-auto lg:!left-1/1 lg:ml-20 !left-auto !top-320 lg:!top-598 !bottom-auto !w-auto !font-primary !font-normal text-24 lg:text-64 lg:!text-left"></div>
+                </Fragment>
+                <Fragment slot="button-prev">
+                    <button class="swiper-button-prev absolute !top-335 lg:!top-613 !left-auto !right-0 !mr-80 lg:!mr-63 z-200" aria-label="Vorheriger Slide">
+                        <IconArrowLeft/>
+                    </button>
+                </Fragment>
+                <Fragment slot="button-next">
+                    <button class="swiper-button-next absolute !top-335 lg:!top-613 !left-auto !right-0 !mr-40 lg:!-mr-8 z-200" aria-label="Nächster Slide">
+                        <IconArrowRight/>
+                    </button>
+                </Fragment>
+            </Swiper>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,20 @@
+---
+
+import ToggleSwitch from "@components/partials/ToggleSwitch.astro";
+import IconInstagram from "@components/icons/IconInstagram.astro";
+---
+
+<header class="site-header py-20">
+    <div class="grid relative">
+        <div class="flex items-baseline font-secondary text-green text-[24px] lg:text-[40px] font-light col-span-12 lg:col-span-8">
+            Marvin Schmidt Codes <span class="block w-1 h-22 lg:h-32 ml-7 bg-green"></span>
+        </div>
+        <div class="absolute lg:static top-0 right-0 lg:col-span-4 lg:flex lg:items-center lg:justify-between">
+            <ToggleSwitch textOn="Layout-Linien anzeigen" className="absolute lg:relative top-20 right-0 rotate-270 lg:rotate-0 lg:top-auto lg:right-auto" />
+            <a href="/" target="_blank" class="absolute lg:relative top-0 right-40 lg:-right-6 flex items-center justify-center w-38 h-38">
+                <IconInstagram className="w-30 h-30" />
+            </a>
+
+        </div>
+    </div>
+</header>

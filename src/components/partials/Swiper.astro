@@ -1,0 +1,39 @@
+---
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+const {swiperSettings = '', className = ''} = Astro.props;
+---
+<div class=`swiper ${className}` data-swiper data-swiper-settings={swiperSettings}>
+    <div class="swiper-wrapper !static">
+        <slot />
+    </div>
+
+    <slot name="button-prev">
+        <button class="swiper-button-prev" aria-label="Nächster Slide"></button>
+    </slot>
+
+    <slot name="pagination">
+        <div class="swiper-pagination"></div>
+    </slot>
+
+    <slot name="button-next">
+        <button class="swiper-button-next" aria-label="Vorheriger Slide"></button>
+    </slot>
+</div>
+
+<script>
+    const $swipers = document.querySelectorAll('*[data-swiper]');
+
+    if($swipers.length > 0){
+        import('@scripts/partials/swiper-slider')
+            .then((module) => {
+                const { swiperSlider } = module;
+                swiperSlider.init();
+            })
+            .catch((error) => {
+                console.error('Error loading module:', error);
+            });
+    }
+</script>

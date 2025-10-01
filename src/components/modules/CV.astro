@@ -1,0 +1,62 @@
+---
+
+import CVEntry from "@components/partials/CVEntry.astro";
+---
+
+<section class="cv module" aria-labelledby="cv-title" id="lebenslauf" role="region">
+    <div class="grid">
+        <div class="col-span-full">
+            <h2 id="cv-title" class="mb-90">Lebenslauf</h2>
+            <div data-cv class="relative pb-10 pt-30">
+                <div class="absolute top-0 left-25 w-1 h-1/1 bg-white lg:left-1/2 lg:-translate-x-1/2"></div>
+                <div class="sticky top-180 w-48 ml-1 -translate-y-80 lg:block lg:ml-[50%] lg:-translate-x-1/2 lg:w-70">
+                    <svg class="w-48 h-48 lg:w-70 lg:h-70" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="m17.713 10.128l-.246.566a.506.506 0 0 1-.934 0l-.246-.566a4.36 4.36 0 0 0-2.22-2.25l-.759-.339a.53.53 0 0 1 0-.963l.717-.319a4.37 4.37 0 0 0 2.251-2.326l.253-.611a.506.506 0 0 1 .942 0l.253.61a4.37 4.37 0 0 0 2.25 2.327l.718.32a.53.53 0 0 1 0 .962l-.76.338a4.36 4.36 0 0 0-2.219 2.251M2.828 12l4.243 4.243l-1.414 1.414L0 12l5.657-5.657L7.07 7.757zm15.515 5.657L24 12l-2.83-2.828l-1.414 1.414L21.171 12l-4.242 4.243z"/>
+                    </svg>
+                </div>
+                <ol class="ml-90 lg:ml-0 lg:after:block lg:after:content-[''] lg:after:clear-both">
+                    <CVEntry alignment="left">
+                        <Fragment slot="year">2022 - heute</Fragment>
+                        <Fragment slot="title">Ausbilder für Mediengestaltung</Fragment>
+                        <p>
+                            Betreuung und Schulung von Auszubildenden
+                        </p>
+                    </CVEntry>
+                    <CVEntry alignment="right">
+                        <Fragment slot="year">2022</Fragment>
+                        <Fragment slot="title">Ausbildereignung</Fragment>
+                        <p>
+                            IHK Düsseldorf <br>
+                            Berufs- und Arbeitspädagogik
+                        </p>
+                    </CVEntry>
+                    <CVEntry alignment="left">
+                        <Fragment slot="year">2019 - heute</Fragment>
+                        <Fragment slot="title">Frontend-Entwickler</Fragment>
+                        <p>
+                            <a href="www.active-value.de">
+                                active value GmbH Düsseldorf
+                            </a>
+                        </p>
+                    </CVEntry>
+                    <CVEntry alignment="right">
+                        <Fragment slot="year">2019</Fragment>
+                        <Fragment slot="title">Ausbildung zum Mediengestalter</Fragment>
+                        <p>
+                            Digital & Print - Gestaltung und Technik <br>
+                            Albrecht-Dürer-Berufskolleg Düsseldorf
+                        </p>
+                    </CVEntry>
+                    <CVEntry alignment="left">
+                        <Fragment slot="year">2014</Fragment>
+                        <Fragment slot="title">Allgemeine Hochschulreife</Fragment>
+                        <p>
+                            Schloß-Gymnasium Benrath <br>
+                            Matehmatik und Informatik
+                        </p>
+                    </CVEntry>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>

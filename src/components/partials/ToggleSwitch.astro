@@ -1,0 +1,25 @@
+---
+const {
+    textOn = '',
+    textOff = '',
+    className = ''
+} = Astro.props;
+---
+<div class=`toggle-switch inline-flex items-center gap-2 ${className}`>
+    {textOff &&
+        <label for="switch-component-on" class="text-sm cursor-pointer">
+            <Fragment set:html={textOff} />
+        </label>
+    }
+
+    <div class="relative inline-block w-50 h-24">
+        <input id="switch-component-on" type="checkbox" checked class="peer appearance-none w-50 h-24 bg-white rounded-full cursor-pointer transition-colors" />
+        <label for="switch-component-on" class="absolute top-3 left-4 w-18 h-18 bg-grey rounded-full shadow-sm transition-transform peer-checked:translate-x-25 peer-checked:bg-black cursor-pointer"></label>
+    </div>
+
+    {textOn &&
+        <label for="switch-component-on" class="hidden lg:block text-sm cursor-pointer lg:ml-10">
+            <Fragment set:html={textOn} />
+        </label>
+    }
+</div>

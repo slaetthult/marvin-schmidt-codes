@@ -1,0 +1,54 @@
+---
+import '@styles/styles.css';
+import SiteHeader from "@components/base/SiteHeader.astro";
+import SiteFooter from "@components/base/SiteFooter.astro";
+import SiteGridLines from "../components/base/SiteGridLines.astro";
+
+const {
+    title
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Astro description">
+        <meta name="viewport" content="width=device-width, initial-scale=1 viewport-fit=cover">
+		<meta name="generator" content={Astro.generator}>
+        <meta http-equiv="Content-Security-Policy" content="font-src 'self';">
+
+        <meta property="og:title" content="Title">
+        <meta property="og:description" content="Description">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://tempo-run-astro5.netlify.app/">
+        <meta property="og:image" content="">
+
+        <meta name="twitter:title" content="Title">
+        <meta name="twitter:description" content="Description">
+        <meta name="twitter:image" content="">
+        <meta name="twitter:card" content="summary">
+
+        <link rel="canonical" href="https://tempo-run-astro5.netlify.app/">
+
+        <link rel="preload" href="/fonts/poppins-v24-latin/poppins-v24-latin-200.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/fonts/poppins-v24-latin/poppins-v24-latin-200italic.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/fonts/poppins-v24-latin/poppins-v24-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/fonts/space-grotesk-v22-latin-300.woff2" as="font" type="font/woff2" crossorigin>
+
+        <link rel="preload" href="/fonts/fonts.css" as="style">
+        <link rel="stylesheet" href="/fonts/fonts.css">
+
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+		<title>{title}</title>
+	</head>
+	<body class="font-primary bg-main-background text-white font-extralight text-xl lg:text-2xl leading-28 lg:leading-32">
+        <SiteHeader/>
+        <main class="site-main my-55 lg:my-100">
+            <slot />
+        </main>
+        <SiteFooter/>
+        <SiteGridLines/>
+	</body>
+</html>

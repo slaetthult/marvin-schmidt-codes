@@ -1,0 +1,26 @@
+---
+const { alignment = 'left'} = Astro.props;
+
+let additionalClasses = 'lg:float-left lg:mb-150 lg:[&:nth-child(3)]:clear-both lg:text-right lg:before:left-auto lg:before:-right-7 lg:after:left-auto lg:after:right-0';
+
+if(alignment === 'right'){
+    additionalClasses = 'lg:float-right lg:mt-150 lg:text-left lg:before:-left-7 lg:before:right-auto lg:after:left-0 lg:after:right-auto';
+}
+
+let containerClass = 'lg:mr-130';
+
+if(alignment === 'right'){
+    containerClass = 'lg:ml-130';
+}
+---
+<li class=`relative mb-60 before:content-[''] before:absolute before:top-5 before:-left-73 before:h-16 before:w-16 before:rounded-full before:bg-white before:z-200 after:content-[''] after:absolute after:top-13 after:-left-60 after:right-0 after:border-t after:border-gray-300 after:w-40 lg:w-[50%] lg:mb-0 lg:after:w-60 ${additionalClasses}`>
+    <div class=`lg:inline-block lg:w-390 ${containerClass}`>
+        <strong class="h4 font-light lg:text-24">
+            <slot name="year"></slot>
+        </strong>
+        <h3 class="text-green pt-5 pb-15 lg:pb-20">
+            <slot name="title"></slot>
+        </h3>
+        <slot/>
+    </div>
+</li>
