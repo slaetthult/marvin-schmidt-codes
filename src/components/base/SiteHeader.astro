@@ -7,7 +7,7 @@ import IconInstagram from "@components/icons/IconInstagram.astro";
 <header class="site-header py-20 lg:py-40">
     <div class="grid relative">
         <div class="flex items-baseline font-secondary text-green text-[24px] lg:text-[40px] font-light col-span-12 lg:col-span-8">
-            Marvin Schmidt Codes <span class="block w-1 h-22 lg:h-32 ml-7 bg-green"></span>
+            <span data-typing-effect>Marvin Schmidt Codes</span> <span class="block w-1 h-22 lg:h-32 ml-7 bg-green animate-[blink_1s_steps(2,start)_infinite]"></span>
         </div>
         <div class="absolute lg:static top-0 right-0 lg:col-span-4 lg:flex lg:items-center lg:justify-between">
             <ToggleSwitch textOn="Layout-Linien anzeigen" className="absolute lg:relative top-20 right-0 rotate-270 lg:rotate-0 lg:top-auto lg:right-auto" />
@@ -18,3 +18,14 @@ import IconInstagram from "@components/icons/IconInstagram.astro";
         </div>
     </div>
 </header>
+
+<script>
+    const $typingEffectElements = document.querySelectorAll('*[data-typing-effect]');
+
+    if($typingEffectElements?.length > 0){
+        import('@scripts/partials/typingEffect').then((module) => {
+            const { typingEffect } = module;
+            typingEffect.init();
+        });
+    }
+</script>
