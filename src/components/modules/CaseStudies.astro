@@ -11,7 +11,7 @@ const swiperSettings = {
     slidesPerView: 1,
     spaceBetween: 20,
     autoplay: {
-        delay: 10000
+        delay: 10000000
     },
     pagination: {
         el: '.swiper-pagination',
@@ -50,12 +50,12 @@ const swiperSettingsJSON = JSON.stringify(swiperSettings);
 <section class="case-studies module overflow-hidden" id="cases" aria-labelledby="case-studies-title" role="region">
     <div class="grid relative">
         <h2 id="case-studies-title" class="col-span-full mb-20">Case Studies</h2>
-        <em class="col-span-full h4 not-italic font-light mb-10 lg:absolute lg:top-600 lg-left-0">Featured</em>
+        <em class="col-span-full h4 not-italic font-light mb-10 lg:absolute lg:top-640 lg-left-0">Featured</em>
         <div class="col-span-5 lg:col-span-9 relative">
             <Swiper className="!overflow-visible !static" swiperSettings={swiperSettingsJSON}>
                 <div class="swiper-slide">
                     <div class="grid px-0 grid-cols-9">
-                        <figure class="col-span-full h-300 lg:h-541 figure-contain-image mb-80 bg-white">
+                        <figure class="col-span-full h-300 lg:h-541 figure-contain-image mb-80 lg:mb-110 bg-white">
                             <Image
                                     src="/images/project1.png"
                                     width="300"
@@ -83,7 +83,7 @@ const swiperSettingsJSON = JSON.stringify(swiperSettings);
                 </div>
                 <div class="swiper-slide">
                     <div class="grid px-0 grid-cols-9">
-                        <figure class="col-span-full h-300 lg:h-541 figure-contain-image mb-80 bg-white">
+                        <figure class="col-span-full h-300 lg:h-541 figure-contain-image mb-80 lg:mb-110 bg-white">
                             <Image
                                     src="/images/project3.png"
                                     width="300"
@@ -111,7 +111,7 @@ const swiperSettingsJSON = JSON.stringify(swiperSettings);
                 </div>
                 <div class="swiper-slide">
                     <div class="grid px-0 grid-cols-9">
-                        <figure class="col-span-full h-300 lg:h-541 figure-contain-image mb-80 bg-white">
+                        <figure class="col-span-full h-300 lg:h-541 figure-contain-image mb-80 lg:mb-110 bg-white">
                             <Image
                                     src="/images/project2.png"
                                     width="300"
@@ -138,7 +138,7 @@ const swiperSettingsJSON = JSON.stringify(swiperSettings);
                     </div>
                 </div>
                 <Fragment slot="pagination">
-                    <div class="swiper-pagination !absolute whitespace-nowrap !-right-52 lg:!-right-auto lg:!left-1/1 lg:ml-20 !left-auto !top-320 lg:!top-598 !bottom-auto !w-auto !font-primary !font-normal text-24 lg:text-64 lg:!text-left"></div>
+                    <div class="swiper-pagination !absolute whitespace-nowrap !-right-52 lg:!-right-auto lg:!left-1/1 lg:ml-35 !left-auto !top-320 lg:!top-598 !bottom-auto !w-auto !font-primary !font-normal text-24 lg:text-64 lg:!text-left"></div>
                 </Fragment>
                 <Fragment slot="button-prev">
                     <button class="swiper-button-prev absolute !top-335 lg:!top-613 !left-auto !right-0 !mr-80 lg:!mr-63 z-200" aria-label="Vorheriger Slide">

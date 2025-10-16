@@ -2,6 +2,6 @@
     .module {
         @apply
         my-75
-        lg:my-120;
+        lg:my-140;
     }
 }
