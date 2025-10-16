@@ -3,7 +3,7 @@ export const typingEffect = {
         queries: {
             element: '*[data-typing-effect]'
         },
-        minDelay: 50,
+        minDelay: 10,
         maxDelay: 250
     },
 
