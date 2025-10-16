@@ -8,6 +8,7 @@ const {
     sizes = [],
     alt = '',
     loading = 'eager',
+    fetchPriority = '',
     className = ''
 } = Astro.props;
 
@@ -35,5 +36,6 @@ theSizes = theSizes.slice(0, -1);
         alt={alt}
         loading={loading}
         formats={['avif', 'webp']}
+        fetchpriority={fetchPriority}
         fallbackFormat="jpg"
 />
