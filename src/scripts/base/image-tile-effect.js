@@ -39,7 +39,20 @@ export const imageTileEffect = {
             $element.addEventListener('mouseleave', () => {
                 image.style.transition = 'transform 0.5s ease';
             });
-        }
 
+            if (window.DeviceOrientationEvent) {
+                window.addEventListener('deviceorientation', (event) => {
+                    const beta = event.beta || 0;  // front-back tilt [-180,180]
+                    const gamma = event.gamma || 0; // left-right tilt [-90,90]
+
+                    // adjust intensity
+                    const rotateX = beta / 4;
+                    const rotateY = gamma / 4;
+
+                    image.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
+                });
+            }
+        }
+        
     }
 };
