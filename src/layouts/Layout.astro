@@ -50,5 +50,23 @@ const {
         </main>
         <SiteFooter/>
         <SiteGridLines/>
+
 	</body>
 </html>
+
+<script>
+    import('@scripts/base/stars-effect').then((module) => {
+        const { starsEffect } = module;
+        starsEffect.init();
+    });
+    const $imageTiltElements = document.querySelector('*[data-image-tilt-effect]');
+
+    if($imageTiltElements){
+        import('@scripts/base/image-tile-effect').then((module) => {
+            const { imageTileEffect } = module;
+            imageTileEffect.init();
+        });
+    }
+
+</script>
+

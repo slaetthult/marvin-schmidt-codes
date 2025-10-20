@@ -34,8 +34,7 @@ export const anchorNavigation = {
 
     },
     toggleIsStickyStyles($anchorNavigation, e){
-        $anchorNavigation.classList.toggle('bg-white', e.intersectionRatio < 1);
-        $anchorNavigation.classList.toggle('text-black', e.intersectionRatio < 1);
+
     },
     scrollSpy(){
         const $anchorNavigation = document.querySelector(anchorNavigation.vars.queries.component);

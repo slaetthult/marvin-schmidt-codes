@@ -6,19 +6,27 @@ import Button from "../partials/Button.astro";
 <section class="hero-intro module !mb-95 lg:!mb-160" aria-labelledby="hero-intro-title" role="region">
     <div class="grid lg:items-center">
         <figure class="col-span-5 lg:col-span-4 lg:col-start-2">
-            <div class="relative -left-10 w-[calc(100%+10px)] lg:left-0 lg:w-full">
+            <div data-image-tilt-effect class="relative -left-10 w-[calc(100%+10px)] lg:left-0 lg:w-full">
                 <Image
                         src="/images/me.jpg"
                         width="304"
                         height="372"
                         sizes={[
                             {
+                                viewportWidth: 1024,
+                                imageWidth: 454
+                            },
+                            {
+                                viewportWidth: 768,
+                                imageWidth: 844
+                            },
+                            {
                                 viewportWidth: 450,
-                                imageWidth: 768
+                                imageWidth: 454
                             },
                             {
                                 viewportWidth: 320,
-                                imageWidth: 450
+                                imageWidth: 324
                             }
                         ]}
                         loading="eager"
