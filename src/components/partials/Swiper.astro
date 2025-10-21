@@ -26,14 +26,24 @@ const {swiperSettings = '', className = ''} = Astro.props;
 <script>
     const $swipers = document.querySelectorAll('*[data-swiper]');
 
-    if($swipers.length > 0){
-        import('@scripts/partials/swiper-slider')
-            .then((module) => {
-                const { swiperSlider } = module;
-                swiperSlider.init();
-            })
-            .catch((error) => {
-                console.error('Error loading module:', error);
-            });
+    if ($swipers.length > 0) {
+        // Use requestIdleCallback if available, otherwise fallback to setTimeout
+        const onIdle = (cb) => {
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(cb);
+            } else {
+                setTimeout(cb, 200);
+            }
+        };
+
+        onIdle(() => {
+            import('@scripts/partials/swiper-slider')
+                .then(({ swiperSlider }) => {
+                    swiperSlider.init();
+                })
+                .catch((error) => {
+                    console.error('Error loading module:', error);
+                });
+        });
     }
 </script>
