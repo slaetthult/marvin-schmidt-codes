@@ -9,28 +9,9 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const isDev = import.meta.env.MODE === 'development';
-
-let image = {
-    service: {
-        entrypoint: "./src/scripts/utils/cloudinary-image-service.ts",
-        config: {
-            cloudName: process.env.CLOUDINARY_CLOUD_NAME || import.meta.env.CLOUDINARY_CLOUD_NAME,
-            baseTransforms: ["f_auto", "q_auto"],
-            maxWidth: 2400
-        }
-    }
-}
-
-if(isDev){
-    image = {
-        remotePatterns: [{ protocol: "https" }]
-    };
-}
-
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://tempo-run-astro5.netlify.app/',
+    site: process.env.PUBLIC_PAGE_URL,
     vite: {
         plugins: [mkcert(), tailwindcss()],
         server: {
@@ -45,5 +26,14 @@ export default defineConfig({
         prefetchAll: true,
         defaultStrategy: 'viewport'
     },
-    image: image
+    image: {
+        service: {
+            entrypoint: "./src/scripts/utils/cloudinary-image-service.ts",
+            config: {
+                cloudName: process.env.CLOUDINARY_CLOUD_NAME || import.meta.env.CLOUDINARY_CLOUD_NAME,
+                baseTransforms: ["f_auto", "q_auto"],
+                maxWidth: 2400
+            }
+        }
+    }
 });
