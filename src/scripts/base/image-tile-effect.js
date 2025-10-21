@@ -48,7 +48,7 @@ export const imageTileEffect = {
                 const $imageElement = $element.querySelector('img');
                 const x = clamp(e.gamma||0, -30, 30) / 30; // left-right
                 const y = clamp(e.beta||0, -30, 30) / 30;  // front-back
-                $imageElement.style.transform = `rotateY(${x*10}deg) rotateX(${y*-10}deg) translateZ(0)`;
+                $imageElement.style.transform = `rotateY(${x*25}deg) rotateX(${y*-25}deg) translateZ(0)`;
             }
         }, {passive:true});
         
