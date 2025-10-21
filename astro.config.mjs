@@ -20,7 +20,7 @@ if(!isDev){
         service: {
             entrypoint: "./src/scripts/utils/cloudinary-image-service.ts",
             config: {
-                cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+                cloudName: process.env.CLOUDINARY_CLOUD_NAME || import.meta.env.CLOUDINARY_CLOUD_NAME,
                 baseTransforms: ["f_auto", "q_auto"],
                 maxWidth: 2400
             }
