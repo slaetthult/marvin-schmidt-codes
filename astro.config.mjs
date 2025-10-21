@@ -31,7 +31,7 @@ export default defineConfig({
             entrypoint: "./src/scripts/utils/cloudinary-image-service.ts",
             config: {
                 cloudName: process.env.CLOUDINARY_CLOUD_NAME || import.meta.env.CLOUDINARY_CLOUD_NAME,
-                retinaDPRs: [2],
+                retinaDPRs: [1.75],
                 baseTransforms: ["f_auto", "q_auto"],
                 maxWidth: 2400
             }
