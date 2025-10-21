@@ -5,6 +5,28 @@ import sitemap from '@astrojs/sitemap';
 import robotsTxt from 'astro-robots-txt';
 import robotsConfig from './robots-txt.config';
 import tailwindcss from '@tailwindcss/vite';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const isDev = import.meta.env.MODE === 'development';
+
+let image = {
+    remotePatterns: [{ protocol: "https" }]
+};
+
+if(!isDev){
+    image = {
+        service: {
+            entrypoint: "./src/scripts/utils/cloudinary-image-service.ts",
+            config: {
+                cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+                baseTransforms: ["f_auto", "q_auto"],
+                maxWidth: 2400
+            }
+        }
+    }
+}
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,7 +45,5 @@ export default defineConfig({
         prefetchAll: true,
         defaultStrategy: 'viewport'
     },
-    image: {
-        remotePatterns: [{ protocol: "https" }],
-    }
+    image: image
 });
