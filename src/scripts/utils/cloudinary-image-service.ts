@@ -80,7 +80,7 @@ const service: ExternalImageService = {
 
         // Include retina widths by multiplying base widths with the configured DPRs.
         const cfg = (options as any)._imageConfig?.service?.config as ServiceConfig | undefined;
-        const retinaDPRs = cfg?.retinaDPRs && cfg.retinaDPRs.length ? cfg.retinaDPRs : [2];
+        const retinaDPRs = cfg?.retinaDPRs && cfg.retinaDPRs.length ? cfg.retinaDPRs : [1.75];
 
         const allWidths = new Set<number>();
         for (const w of baseWidths) {
