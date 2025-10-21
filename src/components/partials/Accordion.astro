@@ -12,7 +12,7 @@ const initialHeight = openInitially ? '' : 'max-h-0 lg:max-h-1/1';
     <button data-accordion-button class="w-full py-20 cursor-pointer text-center text-30 leading-30 lg:h-full lg:relative lg:h-544 lg:w-98">
         <span class="lg:block lg:-rotate-90 lg:w-544 lg:h-98 lg:leading-98 lg:whitespace-nowrap lg:absolute lg:bottom-0 lg:left-0 lg:origin-bottom-left lg:translate-x-98"><slot name="title"></slot></span>
 
-        <span data-accordion-icon id="icon-1" class=`hidden transition-transform`></span>
+        <span data-accordion-icon class=`hidden transition-transform`></span>
     </button>
 
     <div data-accordion-content class=`${initialHeight} w-full lg:w-auto overflow-hidden transition-all ease-in-out`>
