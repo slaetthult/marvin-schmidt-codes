@@ -4,4 +4,12 @@
         my-75
         lg:my-140;
     }
+    .module[data-scroll-reveal]{
+        @apply
+        opacity-0 transition-opacity delay-200 duration-2000;
+    }
+    .module.reveal-module {
+        @apply
+        opacity-100;
+    }
 }

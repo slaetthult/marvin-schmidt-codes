@@ -55,6 +55,12 @@ const {
 </html>
 
 <script>
+
+    import('@scripts/base/scroll-reveal').then((module) => {
+        const { scrollReveal } = module;
+        scrollReveal.init();
+    });
+
     if(window.innerWidth > 1024){
         import('@scripts/base/stars-effect').then((module) => {
             const { starsEffect } = module;

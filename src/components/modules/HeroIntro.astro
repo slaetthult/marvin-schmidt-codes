@@ -3,7 +3,7 @@ import Image from "@components/partials/Image.astro";
 import Button from "../partials/Button.astro";
 ---
 
-<section class="hero-intro module !mb-95 lg:!mb-160" aria-labelledby="hero-intro-title" role="region">
+<section class="hero-intro module !mb-95 lg:!mb-160" aria-labelledby="hero-intro-title" role="region" data-scroll-reveal>
     <div class="grid lg:items-center">
         <figure class="col-span-5 lg:col-span-4 lg:col-start-2">
             <div data-image-tilt-effect class="relative -left-10 w-[calc(100%+10px)] lg:left-0 lg:w-full">
@@ -42,7 +42,9 @@ import Button from "../partials/Button.astro";
                 entwickle ich Web-Erlebnisse, die Nutzer lieben und Unternehmen voranbringen –
                 <em>minimalistisch gedacht</em>, <em>detailverliebt umgesetzt</em>, vom Design bis zur fertigen Website.
             </p>
-            <Button className="w-full mt-18 lg:mt-28" href="mailto:contact@msc.de" icon="send">Anschreiben</Button>
+            <div class="magnet">
+                <Button className="w-full mt-18 lg:mt-28" href="mailto:contact@msc.de" icon="send">Anschreiben</Button>
+            </div>
         </div>
     </div>
 </section>
