@@ -12,20 +12,20 @@ dotenv.config();
 const isDev = import.meta.env.MODE === 'development';
 
 let image = {
-    remotePatterns: [{ protocol: "https" }]
-};
-
-if(!isDev){
-    image = {
-        service: {
-            entrypoint: "./src/scripts/utils/cloudinary-image-service.ts",
-            config: {
-                cloudName: process.env.CLOUDINARY_CLOUD_NAME || import.meta.env.CLOUDINARY_CLOUD_NAME,
-                baseTransforms: ["f_auto", "q_auto"],
-                maxWidth: 2400
-            }
+    service: {
+        entrypoint: "./src/scripts/utils/cloudinary-image-service.ts",
+        config: {
+            cloudName: process.env.CLOUDINARY_CLOUD_NAME || import.meta.env.CLOUDINARY_CLOUD_NAME,
+            baseTransforms: ["f_auto", "q_auto"],
+            maxWidth: 2400
         }
     }
+}
+
+if(isDev){
+    image = {
+        remotePatterns: [{ protocol: "https" }]
+    };
 }
 
 // https://astro.build/config
