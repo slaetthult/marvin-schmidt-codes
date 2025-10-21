@@ -46,6 +46,8 @@ export const accordion = {
 
         const $content = $accordion.querySelector(accordion.vars.queries.content);
         const $icon    = $accordion.querySelector(accordion.vars.queries.icon);
+        const $toggleButton    = $accordion.querySelector(accordion.vars.queries.toggleButton);
+
         if (!$content) return;
 
         if($accordion.getAttribute(accordion.vars.attributes.openInitially) === 'true'){
@@ -53,17 +55,36 @@ export const accordion = {
             $accordion.removeAttribute(accordion.vars.attributes.openInitially);
         }
 
-        if(window.innerWidth > 1024){
-            $content.style.width = expanded ? (812 + 'px') : '0';
-            $content.style.maxHeight = '';
-        } else {
-            $content.style.width = '';
-            $content.style.maxHeight = expanded ? ($content.scrollHeight + 'px') : '0';
-        }
-
         if ($icon) $icon.innerHTML = expanded ? accordion.vars.icons.minus : accordion.vars.icons.plus;
-        $accordion.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        $toggleButton.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+
         $accordion.dataset.expanded = expanded ? 'true' : 'false';
+
+        setTimeout(() => {
+            document.querySelectorAll(accordion.vars.queries.component).forEach(($accordionElement) => {
+                const $contentElement = $accordionElement.querySelector(accordion.vars.queries.content);
+                const expandedElement = $accordionElement.dataset.expanded === 'true';
+                if(!expandedElement){
+                    setTimeout(() => {
+                        $contentElement.setAttribute('hidden', 'true');
+                    }, 400);
+                } else {
+                    $contentElement.removeAttribute('hidden');
+                }
+            });
+
+            setTimeout(() => {
+                if(window.innerWidth > 1024){
+                    $content.style.width = expanded ? (812 + 'px') : '0';
+                    $content.style.maxHeight = '';
+                } else {
+                    $content.style.width = '';
+                    $content.style.maxHeight = expanded ? ($content.scrollHeight + 'px') : '0';
+                }
+            }, 20);
+
+        }, 10);
+
     },
 
     closeSiblingsExcept($current) {
@@ -90,7 +111,7 @@ export const accordion = {
     setInitialAccordionState() {
 
         document.querySelectorAll(accordion.vars.queries.component).forEach(($accordion) => {
-            const expanded = $accordion.dataset.expanded === 'true' || $accordion.getAttribute('aria-expanded') === 'true';
+            const expanded = $accordion.dataset.expanded === 'true';
             accordion.setAccordionState($accordion, !!expanded);
         });
 
