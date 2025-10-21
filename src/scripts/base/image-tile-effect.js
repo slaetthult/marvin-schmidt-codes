@@ -40,19 +40,17 @@ export const imageTileEffect = {
                 image.style.transition = 'transform 0.5s ease';
             });
 
-            if (window.DeviceOrientationEvent) {
-                window.addEventListener('deviceorientation', (event) => {
-                    const beta = event.beta || 0;  // front-back tilt [-180,180]
-                    const gamma = event.gamma || 0; // left-right tilt [-90,90]
-
-                    // adjust intensity
-                    const rotateX = beta / 4;
-                    const rotateY = gamma / 4;
-
-                    image.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
-                });
-            }
         }
+
+        const clamp = (v,min,max)=>Math.max(min,Math.min(max,v));
+        window.addEventListener('deviceorientation', e => {
+            for(const $element of $elements){
+                const $imageElement = $element.querySelector('img');
+                const x = clamp(e.gamma||0, -30, 30) / 30; // left-right
+                const y = clamp(e.beta||0, -30, 30) / 30;  // front-back
+                $imageElement.style.transform = `rotateY(${x*10}deg) rotateX(${y*-10}deg) translateZ(0)`;
+            }
+        }, {passive:true});
         
     }
 };
