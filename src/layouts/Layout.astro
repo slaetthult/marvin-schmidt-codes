@@ -2,11 +2,13 @@
 import '@styles/styles.css';
 import SiteHeader from "@components/base/SiteHeader.astro";
 import SiteFooter from "@components/base/SiteFooter.astro";
-import SiteGridLines from "../components/base/SiteGridLines.astro";
+import SiteGridLines from "@components/base/SiteGridLines.astro";
 
 const {
     title
 } = Astro.props;
+
+const currentPageUrl = Astro.url.pathname;
 ---
 
 <!DOCTYPE html>
@@ -29,7 +31,7 @@ const {
         <meta name="twitter:image" content="">
         <meta name="twitter:card" content="summary">
 
-        <link rel="canonical" href={import.meta.env.PUBLIC_PAGE_URL}>
+        <link rel="canonical" href={currentPageUrl}>
 
         <link rel="preload" href="/fonts/poppins-v24-latin/poppins-v24-latin-200.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/fonts/poppins-v24-latin/poppins-v24-latin-200italic.woff2" as="font" type="font/woff2" crossorigin>
@@ -50,7 +52,6 @@ const {
         </main>
         <SiteFooter />
         <SiteGridLines/>
-
 	</body>
 </html>
 
