@@ -27,35 +27,12 @@ const {swiperSettings = '', className = ''} = Astro.props;
     const $swipers = document.querySelectorAll('*[data-swiper]');
 
     if ($swipers.length > 0) {
-        // Function to load the swiper module
-        const loadSwiper = () => {
-            import('@scripts/partials/swiper-slider')
-                .then(({ swiperSlider }) => {
-                    swiperSlider.init();
-                })
-                .catch((error) => {
-                    console.error('Error loading module:', error);
-                });
-        };
-
-        // Use IntersectionObserver to load when first swiper is visible
-        const observer = new IntersectionObserver(
-            (entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        loadSwiper();
-                        obs.disconnect(); // stop observing after load
-                    }
-                });
-            },
-            {
-                root: null,         // viewport
-                rootMargin: '0px',
-                threshold: 0.1      // trigger when at least 10% is visible
-            }
-        );
-
-        // Observe the first swiper (or loop over all if needed)
-        observer.observe($swipers[0]);
+        import('@scripts/partials/swiper-slider')
+            .then(({ swiperSlider }) => {
+                swiperSlider.init();
+            })
+            .catch((error) => {
+                console.error('Error loading module:', error);
+            });
     }
 </script>

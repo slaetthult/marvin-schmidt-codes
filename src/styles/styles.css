@@ -18,7 +18,7 @@
 
 @import "./components/site-navigation.css";
 @import "./components/module.css";
-
+@import "./components/scroll-reveal.css";
 
 /* -------------------------------------------------------- */
 /*                    UTILITY STYLES                        */

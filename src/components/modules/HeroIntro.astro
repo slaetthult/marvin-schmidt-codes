@@ -3,9 +3,9 @@ import Image from "@components/partials/Image.astro";
 import Button from "../partials/Button.astro";
 ---
 
-<section class="hero-intro module !mb-95 lg:!mb-160" aria-labelledby="hero-intro-title" role="region" data-scroll-reveal>
+<section class="hero-intro module !mb-95 lg:!mb-160" aria-labelledby="hero-intro-title" role="region">
     <div class="grid lg:items-center">
-        <figure class="col-span-5 lg:col-span-4 lg:col-start-2">
+        <figure class="col-span-5 lg:col-span-4 lg:col-start-2" data-scroll-reveal>
             <div data-image-tilt-effect class="relative -left-10 w-[calc(100%+10px)] lg:left-0 lg:w-full">
                 <Image
                         src="/images/me.jpg"
@@ -36,15 +36,13 @@ import Button from "../partials/Button.astro";
             </div>
         </figure>
         <div class="col-span-5 mt-30 lg:col-start-7 lg:mt-0">
-            <h1 class="text-green mb-15" id="hero-intro-title">Frontend Developer.</h1>
-            <p class="mt-9 lg:mt-30">
+            <h1 class="text-green mb-15" id="hero-intro-title" data-scroll-reveal>Frontend Developer.</h1>
+            <p class="mt-9 lg:mt-30" data-scroll-reveal>
                 Mit Fokus auf <strong>Performance</strong>, <strong>Accessibility</strong> und <strong>sauberen Code</strong>
                 entwickle ich Web-Erlebnisse, die Nutzer lieben und Unternehmen voranbringen –
                 <em>minimalistisch gedacht</em>, <em>detailverliebt umgesetzt</em>, vom Design bis zur fertigen Website.
             </p>
-            <div class="magnet">
-                <Button className="w-full mt-18 lg:mt-28" href="mailto:contact@msc.de" icon="send">Anschreiben</Button>
-            </div>
+            <Button className="w-full mt-18 lg:mt-28" href="mailto:contact@msc.de" icon="send" data-scroll-reveal>Anschreiben</Button>
         </div>
     </div>
 </section>

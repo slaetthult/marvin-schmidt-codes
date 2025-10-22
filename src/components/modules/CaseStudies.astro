@@ -47,15 +47,15 @@ const swiperSettings = {
 
 const swiperSettingsJSON = JSON.stringify(swiperSettings);
 ---
-<section class="case-studies module overflow-hidden" id="cases" aria-labelledby="case-studies-title" role="region" data-scroll-reveal>
+<section class="case-studies module overflow-hidden" id="cases" aria-labelledby="case-studies-title" role="region">
     <div class="grid relative">
-        <h2 id="case-studies-title" class="col-span-full mb-20">Case Studies</h2>
-        <em class="col-span-full h4 not-italic font-light mb-10 lg:absolute lg:top-640 lg-left-0">Featured</em>
+        <h2 data-scroll-reveal id="case-studies-title" class="col-span-full mb-20">Case Studies</h2>
+        <em data-scroll-reveal class="col-span-full h4 not-italic font-light mb-10 lg:absolute lg:top-640 lg-left-0">Featured</em>
         <div class="col-span-5 lg:col-span-9 relative">
             <Swiper className="!overflow-visible !static" swiperSettings={swiperSettingsJSON}>
                 <div class="swiper-slide">
                     <div class="grid px-0 grid-cols-9">
-                        <figure class="col-span-full h-300 lg:h-541 figure-contain-image mb-80 lg:mb-110 bg-transparent">
+                        <figure data-scroll-reveal class="col-span-full h-300 lg:h-541 figure-contain-image mb-80 lg:mb-110 bg-transparent">
                             <Image
                                     src="/images/project1.png"
                                     width="300"
@@ -84,15 +84,15 @@ const swiperSettingsJSON = JSON.stringify(swiperSettings);
                             />
                         </figure>
                         <div class="col-span-full lg:col-span-5 lg:col-start-4 transition-opacity duration-1500 ease-in-out opacity-0 [.swiper-slide-active_&]:opacity-100">
-                            <strong class="font-secondary font-light block mb-8">Corporate-Seite mit Shop</strong>
-                            <h3 class="mb-20">Holtzbrinck Buchverlage</h3>
-                            <Button href="/" icon="link">Website besuchen</Button>
+                            <strong data-scroll-reveal class="font-secondary font-light block mb-8">Corporate-Seite mit Shop</strong>
+                            <h3 data-scroll-reveal class="mb-20">Holtzbrinck Buchverlage</h3>
+                            <Button href="/" icon="link" data-scroll-reveal>Website besuchen</Button>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="grid px-0 grid-cols-9">
-                        <figure class="col-span-full h-300 lg:h-541 figure-contain-image mb-80 lg:mb-110 bg-transparent">
+                        <figure data-scroll-reveal class="col-span-full h-300 lg:h-541 figure-contain-image mb-80 lg:mb-110 bg-transparent">
                             <Image
                                     src="/images/project3.png"
                                     width="300"
@@ -121,9 +121,9 @@ const swiperSettingsJSON = JSON.stringify(swiperSettings);
                             />
                         </figure>
                         <div class="col-span-full lg:col-span-5 lg:col-start-4 transition-opacity duration-1500 ease-in-out opacity-0 [.swiper-slide-active_&]:opacity-100">
-                            <strong class="font-secondary font-light block mb-8">Corporate-Seite</strong>
-                            <h3 class="mb-20">Die Welt von Steiff</h3>
-                            <Button href="https://corporate.steiff.com/de/" icon="link" target="_blank">Website besuchen</Button>
+                            <strong data-scroll-reveal class="font-secondary font-light block mb-8">Corporate-Seite</strong>
+                            <h3 data-scroll-reveal class="mb-20">Die Welt von Steiff</h3>
+                            <Button href="https://corporate.steiff.com/de/" icon="link" target="_blank" data-scroll-reveal>Website besuchen</Button>
                         </div>
                     </div>
                 </div>
@@ -165,15 +165,15 @@ const swiperSettingsJSON = JSON.stringify(swiperSettings);
                     </div>
                 </div>
                 <Fragment slot="pagination">
-                    <div class="swiper-pagination !absolute whitespace-nowrap !-right-52 lg:!-right-auto lg:!left-1/1 lg:ml-35 !left-auto !top-320 lg:!top-598 !bottom-auto !w-auto !font-primary !font-normal text-24 lg:text-64 lg:!text-left"></div>
+                    <div data-scroll-reveal class="swiper-pagination !absolute whitespace-nowrap !-right-52 lg:!-right-auto lg:!left-1/1 lg:ml-35 !left-auto !top-320 lg:!top-598 !bottom-auto !w-auto !font-primary !font-normal text-24 lg:text-64 lg:!text-left"></div>
                 </Fragment>
                 <Fragment slot="button-prev">
-                    <button class="swiper-button-prev absolute !top-335 lg:!top-613 !left-auto !right-0 !mr-80 lg:!mr-63 z-200" aria-label="Vorheriger Slide">
+                    <button data-scroll-reveal class="swiper-button-prev absolute !top-335 lg:!top-613 !left-auto !right-0 !mr-80 lg:!mr-63 z-200" aria-label="Vorheriger Slide">
                         <IconArrowLeft/>
                     </button>
                 </Fragment>
                 <Fragment slot="button-next">
-                    <button class="swiper-button-next absolute !top-335 lg:!top-613 !left-auto !right-0 !mr-40 lg:!-mr-8 z-200" aria-label="Nächster Slide">
+                    <button data-scroll-reveal class="swiper-button-next absolute !top-335 lg:!top-613 !left-auto !right-0 !mr-40 lg:!-mr-8 z-200" aria-label="Nächster Slide">
                         <IconArrowRight/>
                     </button>
                 </Fragment>

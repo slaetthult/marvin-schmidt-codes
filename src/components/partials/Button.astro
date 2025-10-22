@@ -3,7 +3,8 @@ const {
     href = '',
     icon = '',
     className = '',
-    target = ''
+    target = '',
+    ...props
 } = Astro.props;
 
 const buttonClass = `button inline-flex w-auto items-center justify-center py-10 px-40 bg-green text-center text-black text-16 leading-28 font-medium tracking-2 transition-all focus:bg-white active:bg-white hover:bg-white ${className}`;
@@ -30,13 +31,13 @@ if(icon === 'send'){
 }
 ---
 {href &&
-    <a href={href} class={buttonClass} target={target} rel={target === '_blank' ? 'noopener noreferrer' : ''}>
+    <a href={href} class={buttonClass} target={target} rel={target === '_blank' ? 'noopener noreferrer' : ''} {...props}>
         <Fragment set:html={iconSVG}/>
         <slot/>
     </a>
 }
 {!href &&
-    <button class={buttonClass} type="button">
+    <button class={buttonClass} type="button" {...props}>
         <Fragment set:html={iconSVG}/>
         <slot/>
     </button>

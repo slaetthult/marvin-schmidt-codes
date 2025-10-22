@@ -1,0 +1,11 @@
+
+@layer components {
+    [data-scroll-reveal]{
+        @apply
+        opacity-0 transition-opacity delay-200 duration-2000;
+    }
+    .reveal-element {
+        @apply
+        opacity-100;
+    }
+}

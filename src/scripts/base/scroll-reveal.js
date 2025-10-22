@@ -4,7 +4,7 @@ export const scrollReveal = {
             element: '*[data-scroll-reveal]'
         },
         classes: {
-            reveal: 'reveal-module'
+            reveal: 'reveal-element'
         }
     },
     init(){
