@@ -41,16 +41,6 @@ export const imageTileEffect = {
             });
 
         }
-
-        const clamp = (v,min,max)=>Math.max(min,Math.min(max,v));
-        window.addEventListener('deviceorientation', e => {
-            for(const $element of $elements){
-                const $imageElement = $element.querySelector('img');
-                const x = clamp(e.gamma||0, -30, 30) / 30; // left-right
-                const y = clamp(e.beta||0, -30, 30) / 30;  // front-back
-                $imageElement.style.transform = `rotateY(${x*25}deg) rotateX(${y*-25}deg) translateZ(0)`;
-            }
-        }, {passive:true});
         
     }
 };
