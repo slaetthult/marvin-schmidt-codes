@@ -74,7 +74,7 @@ export const anchorNavigation = {
         }
 
         window.scrollTo({
-            top: $targetElement.offsetTop,
+            top: $targetElement.offsetTop - 100,
             behavior: "smooth"
         });
     }
