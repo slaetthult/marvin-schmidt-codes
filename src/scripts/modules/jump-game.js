@@ -30,6 +30,7 @@ export const jumpGame = {
                         height:100%;
                         display:block;
                         background:transparent;
+                        touch-action: none;
                      }
                     .jg-hud{
                       position:absolute; inset:auto 8px 8px 8px; display:flex; justify-content:space-between; gap:8px;
@@ -125,7 +126,7 @@ export const jumpGame = {
                     else if (e.code === 'KeyR') { reset(); }
                 });
                 startBtn.addEventListener('click', () => {
-                    if (!state.started){ state.started = true; startOverlay.style.display = 'none'; root.focus(); }
+                    if (!state.started){ state.started = true; startOverlay.style.display = 'none'; }
                     else if (!state.alive){ reset(); }
                 });
 
