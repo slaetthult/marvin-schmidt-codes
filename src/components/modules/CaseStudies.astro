@@ -49,118 +49,218 @@ const swiperSettingsJSON = JSON.stringify(swiperSettings);
 ---
 <section class="case-studies module overflow-hidden" id="cases" aria-labelledby="case-studies-title" role="region">
     <div class="grid relative">
+        <em data-scroll-reveal class="col-span-full h5 not-italic font-light text-white">Ausgewählte</em>
         <h2 data-scroll-reveal id="case-studies-title" class="col-span-full mb-20">Projekte</h2>
-        <em data-scroll-reveal class="col-span-full h4 not-italic font-light mb-10 lg:absolute lg:top-640 lg-left-0">Featured</em>
+        <p class="col-span-5 lg:col-span-5 mb-50" data-scroll-reveal>
+            Als Teil des Entwicklerteams bin ich für die Umsetzung des User-Interfaces verantwortlich – von der technischen Architektur bis zur finalen Implementierung.
+        </p>
         <div class="col-span-5 lg:col-span-9 relative">
             <Swiper className="!overflow-visible !static" swiperSettings={swiperSettingsJSON}>
                 <div class="swiper-slide">
                     <div class="grid px-0 grid-cols-9">
-                        <figure data-scroll-reveal class="col-span-full h-300 lg:h-541 figure-contain-image mb-80 lg:mb-110 bg-transparent">
-                            <Image
-                                    src="/images/project1.png"
-                                    width="300"
-                                    height="300"
-                                    sizes={[
-                                        {
-                                            viewportWidth: 1024,
-                                            imageWidth: 1045
-                                        },
-                                        {
-                                            viewportWidth: 768,
-                                            imageWidth: 833
-                                        },
-                                        {
-                                            viewportWidth: 430,
-                                            imageWidth: 768
-                                        },
-                                        {
-                                            viewportWidth: 320,
-                                            imageWidth: 323
-                                        }
-                                    ]}
-                                    loading="lazy"
-                                    fetchPriority="low"
-                                    alt="A description of my image."
-                            />
+                        <figure data-scroll-reveal class="relative col-span-full h-300 lg:h-575 p-40 figure-contain-image mb-60 lg:mb-40 bg-transparent overflow-hidden">
+                            <a href="https://www.bramblebooks.de" target="_blank" rel="noopener noreferrer">
+                                <Image
+                                        src="/images/project1.png"
+                                        width="300"
+                                        height="300"
+                                        sizes={[
+                                            {
+                                                viewportWidth: 1024,
+                                                imageWidth: 1045
+                                            },
+                                            {
+                                                viewportWidth: 768,
+                                                imageWidth: 833
+                                            },
+                                            {
+                                                viewportWidth: 430,
+                                                imageWidth: 768
+                                            },
+                                            {
+                                                viewportWidth: 320,
+                                                imageWidth: 323
+                                            }
+                                        ]}
+                                        loading="lazy"
+                                        fetchPriority="low"
+                                        alt="A description of my image."
+                                />
+                                <Image
+                                        src="/images/project1.png"
+                                        width="300"
+                                        height="300"
+                                        sizes={[
+                                            {
+                                                viewportWidth: 1024,
+                                                imageWidth: 1045
+                                            },
+                                            {
+                                                viewportWidth: 768,
+                                                imageWidth: 833
+                                            },
+                                            {
+                                                viewportWidth: 430,
+                                                imageWidth: 768
+                                            },
+                                            {
+                                                viewportWidth: 320,
+                                                imageWidth: 323
+                                            }
+                                        ]}
+                                        loading="lazy"
+                                        fetchPriority="low"
+                                        className="absolute top-0 left-0 w-full h-full object-cover -z-1 blur-lg scale-110 brightness-90"
+                                        alt="A description of my image."
+                                />
+                            </a>
                         </figure>
-                        <div class="col-span-full lg:col-span-5 lg:col-start-4 transition-opacity duration-1500 ease-in-out opacity-0 [.swiper-slide-active_&]:opacity-100">
+                        <div class="col-span-full lg:col-span-5 transition-opacity duration-1500 ease-in-out opacity-0 [.swiper-slide-active_&]:opacity-100">
                             <strong data-scroll-reveal class="font-secondary font-light block mb-8">Corporate-Seite mit Shop</strong>
                             <h3 data-scroll-reveal class="mb-20">Holtzbrinck Buchverlage</h3>
-                            <Button href="/" icon="link" data-scroll-reveal>Website besuchen</Button>
+                            <p data-scroll-reveal class="mb-20">
+                                Ein skalierbares Frontend-System, das mehrere Mandanten und unabhängige Webseiten abbildet. Hier am Beispiel von Bramble Books.
+                            </p>
+                            <Button href="https://www.bramblebooks.de" target="_blank" icon="link" data-scroll-reveal>Website besuchen</Button>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="grid px-0 grid-cols-9">
-                        <figure data-scroll-reveal class="col-span-full h-300 lg:h-541 figure-contain-image mb-80 lg:mb-110 bg-transparent">
-                            <Image
-                                    src="/images/project3.png"
-                                    width="300"
-                                    height="300"
-                                    sizes={[
-                                        {
-                                            viewportWidth: 1024,
-                                            imageWidth: 1045
-                                        },
-                                        {
-                                            viewportWidth: 768,
-                                            imageWidth: 833
-                                        },
-                                        {
-                                            viewportWidth: 430,
-                                            imageWidth: 768
-                                        },
-                                        {
-                                            viewportWidth: 320,
-                                            imageWidth: 323
-                                        }
-                                    ]}
-                                    loading="lazy"
-                                    fetchPriority="low"
-                                    alt="A description of my image."
-                            />
+                        <figure class="relative col-span-full h-300 lg:h-575 p-40 figure-contain-image mb-60 lg:mb-40 bg-transparent overflow-hidden">
+                            <a href="https://corporate.steiff.com/de" target="_blank" rel="noopener noreferrer">
+                                <Image
+                                        src="/images/project3.png"
+                                        width="300"
+                                        height="300"
+                                        sizes={[
+                                            {
+                                                viewportWidth: 1024,
+                                                imageWidth: 1045
+                                            },
+                                            {
+                                                viewportWidth: 768,
+                                                imageWidth: 833
+                                            },
+                                            {
+                                                viewportWidth: 430,
+                                                imageWidth: 768
+                                            },
+                                            {
+                                                viewportWidth: 320,
+                                                imageWidth: 323
+                                            }
+                                        ]}
+                                        loading="lazy"
+                                        fetchPriority="low"
+                                        alt="A description of my image."
+                                />
+                                <Image
+                                        src="/images/project3.png"
+                                        width="300"
+                                        height="300"
+                                        sizes={[
+                                            {
+                                                viewportWidth: 1024,
+                                                imageWidth: 1045
+                                            },
+                                            {
+                                                viewportWidth: 768,
+                                                imageWidth: 833
+                                            },
+                                            {
+                                                viewportWidth: 430,
+                                                imageWidth: 768
+                                            },
+                                            {
+                                                viewportWidth: 320,
+                                                imageWidth: 323
+                                            }
+                                        ]}
+                                        loading="lazy"
+                                        fetchPriority="low"
+                                        className="absolute top-0 left-0 w-full h-full object-cover -z-1 blur-lg scale-110 brightness-90"
+                                        alt="A description of my image."
+                                />
+                            </a>
+
                         </figure>
-                        <div class="col-span-full lg:col-span-5 lg:col-start-4 transition-opacity duration-1500 ease-in-out opacity-0 [.swiper-slide-active_&]:opacity-100">
-                            <strong data-scroll-reveal class="font-secondary font-light block mb-8">Corporate-Seite</strong>
-                            <h3 data-scroll-reveal class="mb-20">Die Welt von Steiff</h3>
-                            <Button href="https://corporate.steiff.com/de/" icon="link" target="_blank" data-scroll-reveal>Website besuchen</Button>
+                        <div class="col-span-full lg:col-span-5 transition-opacity duration-1500 ease-in-out opacity-0 [.swiper-slide-active_&]:opacity-100">
+                            <strong class="font-secondary font-light block mb-8">Corporate-Seite</strong>
+                            <h3 class="mb-20">Die Welt von Steiff</h3>
+                            <p class="mb-20">
+                                Schlanke Corporate-Website, die Kunden eine klare Informationsstruktur und schnelle Orientierung bietet.
+                            </p>
+                            <Button href="https://corporate.steiff.com/de" icon="link" target="_blank" data-scroll-reveal>Website besuchen</Button>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="grid px-0 grid-cols-9">
-                        <figure class="col-span-full h-300 lg:h-541 figure-contain-image mb-80 lg:mb-110 bg-transparent">
-                            <Image
-                                    src="/images/project2.png"
-                                    width="300"
-                                    height="300"
-                                    sizes={[
-                                        {
-                                            viewportWidth: 1024,
-                                            imageWidth: 1045
-                                        },
-                                        {
-                                            viewportWidth: 768,
-                                            imageWidth: 833
-                                        },
-                                        {
-                                            viewportWidth: 430,
-                                            imageWidth: 768
-                                        },
-                                        {
-                                            viewportWidth: 320,
-                                            imageWidth: 323
-                                        }
-                                    ]}
-                                    loading="lazy"
-                                    fetchPriority="low"
-                                    alt="A description of my image."
-                            />
+                        <figure class="relative col-span-full h-300 lg:h-575 p-40 figure-contain-image mb-60 lg:mb-40 bg-transparent overflow-hidden">
+                            <a href="https://www.aengevelt.com" target="_blank" rel="noopener noreferrer">
+                                <Image
+                                        src="/images/project2.png"
+                                        width="300"
+                                        height="300"
+                                        sizes={[
+                                            {
+                                                viewportWidth: 1024,
+                                                imageWidth: 1045
+                                            },
+                                            {
+                                                viewportWidth: 768,
+                                                imageWidth: 833
+                                            },
+                                            {
+                                                viewportWidth: 430,
+                                                imageWidth: 768
+                                            },
+                                            {
+                                                viewportWidth: 320,
+                                                imageWidth: 323
+                                            }
+                                        ]}
+                                        loading="lazy"
+                                        fetchPriority="low"
+                                        alt="A description of my image."
+                                />
+                                <Image
+                                        src="/images/project2.png"
+                                        width="300"
+                                        height="300"
+                                        sizes={[
+                                            {
+                                                viewportWidth: 1024,
+                                                imageWidth: 1045
+                                            },
+                                            {
+                                                viewportWidth: 768,
+                                                imageWidth: 833
+                                            },
+                                            {
+                                                viewportWidth: 430,
+                                                imageWidth: 768
+                                            },
+                                            {
+                                                viewportWidth: 320,
+                                                imageWidth: 323
+                                            }
+                                        ]}
+                                        loading="lazy"
+                                        fetchPriority="low"
+                                        className="absolute top-0 left-0 w-full h-full object-cover -z-1 blur-lg scale-110 brightness-90"
+                                        alt="A description of my image."
+                                />
+                            </a>
                         </figure>
-                        <div class="col-span-full lg:col-span-5 lg:col-start-4 transition-opacity duration-1500 ease-in-out opacity-0 [.swiper-slide-active_&]:opacity-100">
+                        <div class="col-span-full lg:col-span-5 transition-opacity duration-1500 ease-in-out opacity-0 [.swiper-slide-active_&]:opacity-100">
                             <strong class="font-secondary font-light block mb-8">Plattform für Immobilien</strong>
                             <h3 class="mb-20">Aengevelt Immobilien</h3>
-                            <Button href="https://www.aengevelt.com/" icon="link" target="_blank">Website besuchen</Button>
+                            <p class="mb-20">
+                                Performanten Website, die Corporate-Inhalte und Immobiliensuche in einer Lösung zusammenführt.
+                            </p>
+                            <Button href="https://www.aengevelt.com" icon="link" target="_blank">Website besuchen</Button>
                         </div>
                     </div>
                 </div>

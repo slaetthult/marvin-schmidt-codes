@@ -31,7 +31,7 @@
     h5,.h5,
     h6,.h6 {
         @apply
-        font-secondary text-white font-light;
+        font-secondary text-green font-light;
     }
 
     h1 a,.h1 a,
