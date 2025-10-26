@@ -10,7 +10,7 @@ import Button from "@components/partials/Button.astro";
             <p>Ob Projektanfrage, Zusammenarbeit oder einfach nur ein Hallo - schreibe mit gerne eine Nachricht.</p>
         </div>
         <div class="col-span-12 lg:col-span-4 lg:col-start-8">
-            <Button href="mailto:contact@marvin-schmidt-codes.dev" className="!block -ml-10 !w-[calc(100%+20px)] my-20 lg:!ml-0 lg:!w-full">Nachricht an <br> <span class="inline underline">contact@marvin-schmidt-codes.dev</span> <br> schreiben</Button>
+            <Button href=`mailto:${import.meta.env.PUBLIC_CONTACT_EMAIL}` className="!block -ml-10 !w-[calc(100%+20px)] my-20 lg:!ml-0 lg:!w-full">Nachricht an <br> <span class="inline underline">{import.meta.env.PUBLIC_CONTACT_EMAIL}</span> <br> schreiben</Button>
         </div>
     </div>
     <hr class="my-45 lg:my-65 lg:mb-10">

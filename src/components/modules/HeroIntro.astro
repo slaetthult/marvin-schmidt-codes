@@ -42,7 +42,7 @@ import Button from "../partials/Button.astro";
                 entwickle ich Web-Erlebnisse, die Nutzer lieben und Unternehmen voranbringen –
                 <em>minimalistisch gedacht</em>, <em>detailverliebt umgesetzt</em>, vom Design bis zur fertigen Website.
             </p>
-            <Button className="w-full mt-18 lg:mt-28" href="mailto:contact@msc.de" icon="send" data-scroll-reveal>Anschreiben</Button>
+            <Button className="w-full mt-18 lg:mt-28" href=`mailto:${import.meta.env.PUBLIC_CONTACT_EMAIL}` icon="send" data-scroll-reveal>Anschreiben</Button>
         </div>
     </div>
 </section>
