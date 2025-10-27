@@ -25,7 +25,7 @@ const {swiperSettings = '', className = ''} = Astro.props;
 
 <script>
     import { lazyLoadWhenIdle } from '@scripts/utils/lazy-load-when-idle';
-    lazyLoadWhenIdle('/src/scripts/partials/swiper-slider', {
+    lazyLoadWhenIdle('../partials/swiper-slider', {
         selector: '*[data-swiper]',
         onLoad: ({ swiperSlider }) => swiperSlider.init(),
     });

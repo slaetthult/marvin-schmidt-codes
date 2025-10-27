@@ -26,7 +26,7 @@ import Flag from "@components/partials/Flag.astro";
 
 <script>
     import { lazyLoadWhenIdle } from '@scripts/utils/lazy-load-when-idle';
-    lazyLoadWhenIdle('/src/scripts/partials/count-up-number', {
+    lazyLoadWhenIdle('../partials/count-up-number', {
         selector: '*[data-count-up-number]',
         onLoad: ({ countUpNumber }) => countUpNumber?.init?.()
     });
