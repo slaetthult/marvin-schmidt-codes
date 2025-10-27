@@ -23,8 +23,8 @@
 
 <script>
     import { lazyLoadWhenIdle } from '@scripts/utils/lazy-load-when-idle';
-    lazyLoadWhenIdle('../modules/jump-game', {
+    lazyLoadWhenIdle(() => import('@scripts/modules/jump-game.js'), {
         selector: '*[data-jump-game]',
-        onLoad: ({ jumpGame }) => jumpGame.init(),
+        onLoad: ({ jumpGame }) => jumpGame?.init?.()
     });
 </script>
