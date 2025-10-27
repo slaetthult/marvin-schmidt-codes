@@ -1,13 +1,33 @@
 ---
-
+import Flag from "@components/partials/Flag.astro";
 ---
 <div class="module short-facts">
-    <div class="grid-wrap">
-        <div class="col-span-full">
-            Short-Facts <br>
-            9+ Jahre Erfahrung im Frontend Development <br>
-            75+ Design-Systeme umgesetzt <br>
-            100 % Leidenschaft für Performance & Usability
+    <div class="grid">
+        <div class="col-span-12">
+            <Flag>Zahlen</Flag>
+            <h2 data-scroll-reveal class="mb-40 lg:mb-80">Key Facts</h2>
         </div>
     </div>
+    <ol class="grid lg:text-center">
+        <li data-scroll-reveal class="col-span-12 lg:col-span-4 mb-40 after:content-[''] after:block after:h-1 after:w-90 lg:after:m-auto after:mt-30 lg:after:hidden  after:bg-white">
+            <div class="text-48 lg:text-96 mb-10 lg:mb-40"><span data-count-up-number="9" class="inline-block w-30 lg:w-60">9</span>+</div>
+            <div class="font-bold">Jahre Erfahrung <br> im Frontend Development</div>
+        </li>
+        <li data-scroll-reveal class="col-span-12 lg:col-span-4 mb-40 after:content-[''] after:block after:h-1 after:w-90 lg:after:m-auto after:mt-30 lg:after:hidden  after:bg-white">
+            <div class="text-48 lg:text-96 mb-10 lg:mb-40"><span data-count-up-number="75" class="inline-block w-54 lg:w-108">75</span>+</div>
+            <div class="font-bold">Umgesetzte <br> Design-Systeme</div>
+        </li>
+        <li data-scroll-reveal class="col-span-12 lg:col-span-4">
+            <div class="text-48 lg:text-96 mb-10 lg:mb-40"><span data-count-up-number="800000" class="inline-block w-180 lg:w-360">800000</span>+</div>
+            <div class="font-bold">Zeilen <br> Code geschrieben</div>
+        </li>
+    </ol>
 </div>
+
+<script>
+    import { lazyLoadWhenIdle } from '@scripts/utils/lazy-load-when-idle';
+    lazyLoadWhenIdle('/src/scripts/partials/count-up-number', {
+        selector: '*[data-count-up-number]',
+        onLoad: ({ countUpNumber }) => countUpNumber?.init?.()
+    });
+</script>

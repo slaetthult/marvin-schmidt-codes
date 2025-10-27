@@ -22,37 +22,9 @@
 </style>
 
 <script>
-    const $jumpGames = document.querySelector('*[data-jump-game]');
-
-    if ($jumpGames) {
-        const loadAnchorNavigation = () => {
-            import('@scripts/modules/jump-game')
-                .then(({ jumpGame }) => {
-                    jumpGame.init();
-                })
-                .catch((error) => {
-                    console.error('Error loading module:', error);
-                });
-        };
-
-        const observer = new IntersectionObserver(
-            (entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        loadAnchorNavigation();
-                        obs.disconnect(); // Beobachtung beenden, wenn geladen
-                    }
-                });
-            },
-            {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1 // bei 10 % Sichtbarkeit laden
-            }
-        );
-
-        observer.observe($jumpGames);
-    }
+    import { lazyLoadWhenIdle } from '@scripts/utils/lazy-load-when-idle';
+    lazyLoadWhenIdle('/src/scripts/modules/jump-game', {
+        selector: '*[data-jump-game]',
+        onLoad: ({ jumpGame }) => jumpGame.init(),
+    });
 </script>
-
-

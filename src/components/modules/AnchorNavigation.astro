@@ -29,35 +29,9 @@
 </nav>
 
 <script>
-    const $anchorNavigation = document.querySelector('[data-anchor-navigation]');
-
-    if ($anchorNavigation) {
-        const loadAnchorNavigation = () => {
-            import('@scripts/modules/anchor-navigation')
-                .then(({ anchorNavigation }) => {
-                    anchorNavigation.init();
-                })
-                .catch((error) => {
-                    console.error('Error loading module:', error);
-                });
-        };
-
-        const observer = new IntersectionObserver(
-            (entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        loadAnchorNavigation();
-                        obs.disconnect(); // Beobachtung beenden, wenn geladen
-                    }
-                });
-            },
-            {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1 // bei 10 % Sichtbarkeit laden
-            }
-        );
-
-        observer.observe($anchorNavigation);
-    }
+    import { lazyLoadWhenIdle } from '@scripts/utils/lazy-load-when-idle';
+    lazyLoadWhenIdle('/src/scripts/modules/anchor-navigation', {
+        selector: '*[data-anchor-navigation]',
+        onLoad: ({ anchorNavigation }) => anchorNavigation.init(),
+    });
 </script>

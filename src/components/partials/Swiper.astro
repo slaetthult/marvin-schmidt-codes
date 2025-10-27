@@ -24,15 +24,9 @@ const {swiperSettings = '', className = ''} = Astro.props;
 </div>
 
 <script>
-    const $swipers = document.querySelectorAll('*[data-swiper]');
-
-    if ($swipers.length > 0) {
-        import('@scripts/partials/swiper-slider')
-            .then(({ swiperSlider }) => {
-                swiperSlider.init();
-            })
-            .catch((error) => {
-                console.error('Error loading module:', error);
-            });
-    }
+    import { lazyLoadWhenIdle } from '@scripts/utils/lazy-load-when-idle';
+    lazyLoadWhenIdle('/src/scripts/partials/swiper-slider', {
+        selector: '*[data-swiper]',
+        onLoad: ({ swiperSlider }) => swiperSlider.init(),
+    });
 </script>

@@ -70,7 +70,7 @@ const currentPageUrl = Astro.url;
     }
     
     const $imageTiltElements = document.querySelector('*[data-image-tilt-effect]');
-    if($imageTiltElements){
+    if($imageTiltElements && window.innerWidth > 1024){
         import('@scripts/base/image-tile-effect').then((module) => {
             const { imageTileEffect } = module;
             imageTileEffect.init();

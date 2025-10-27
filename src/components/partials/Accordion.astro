@@ -35,12 +35,9 @@ const randomId = generateRandomString();
 </div>
 
 <script>
-    const $accordion = document.querySelector('[data-accordion]');
-
-    if($accordion){
-        import('@scripts/partials/accordion').then((module) => {
-            const { accordion } = module;
-            accordion.init();
-        });
-    }
+    import { lazyLoadWhenIdle } from '@scripts/utils/lazy-load-when-idle';
+    lazyLoadWhenIdle('/src/scripts/partials/accordion', {
+        selector: '*[data-accordion]',
+        onLoad: ({ accordion }) => accordion.init(),
+    });
 </script>
