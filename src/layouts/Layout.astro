@@ -46,6 +46,12 @@ const currentPageUrl = Astro.url;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
 		<title>{title}</title>
+
+        <style is:inline>
+        #cookiescript_accept {
+        color: #1C1C1C !important;
+    }
+        </style>
 	</head>
 	<body class="font-primary bg-main-background text-white font-extralight text-xl lg:text-2xl leading-28 lg:leading-32">
         <SiteHeader/>
