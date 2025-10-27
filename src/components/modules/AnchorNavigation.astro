@@ -30,7 +30,7 @@
 
 <script>
     import { lazyLoadWhenIdle } from '@scripts/utils/lazy-load-when-idle';
-    lazyLoadWhenIdle('../modules/anchor-navigation', {
+    lazyLoadWhenIdle('/src/scripts/modules/anchor-navigation.js', {
         selector: '*[data-anchor-navigation]',
         onLoad: ({ anchorNavigation }) => anchorNavigation.init(),
     });
