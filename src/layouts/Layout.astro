@@ -71,13 +71,9 @@ const currentPageUrl = Astro.url;
 </html>
 
 <script>
-    import { lazyLoadWhenIdle } from '@scripts/utils/lazy-load-when-idle';
-
-
-    lazyLoadWhenIdle(() => import('@scripts/base/scroll-reveal.js'), {
-        selector: '*[data-scroll-reveal]',
-        rootMargin: '0px 0px 10% 0px',
-        onLoad: ({ scrollReveal }) => scrollReveal?.init?.()
+    import('@scripts/base/scroll-reveal').then((module) => {
+        const { scrollReveal } = module;
+        scrollReveal.init();
     });
 
     if(window.innerWidth > 1024){
