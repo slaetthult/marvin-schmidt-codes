@@ -4,5 +4,23 @@
         0%, 49% { opacity: 1; }
         50%, 100% { opacity: 0; }
     }
-    
+
+    .animated-background {
+        background-size: 400%;
+        -webkit-animation: animation 40s ease infinite;
+        -moz-animation: animation 40s ease infinite;
+        animation: animation 40s ease infinite;
+    }
+
+    @keyframes animation {
+        0%,
+        100% {
+            background-position: 0 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+
 }

@@ -20,6 +20,12 @@
         lg:grid-cols-12 lg:px-20;
     }
 
+    .grid-lg {
+        @apply
+        lg:gap-x-20 lg:max-w-[var(--grid-max-width)] lg:mx-auto lg:w-full
+        lg:grid-cols-12 lg:px-20;
+    }
+
     /* -------------------------------------------------------- */
     /*                       HEADLINES                          */
     /* -------------------------------------------------------- */

@@ -5,7 +5,7 @@
     --color-border-grey:            #7D8287;
     --color-grey:                   #7D8287;
 
-    --color-black:                  #2C2F33;
+    --color-black:                  #1B1E21;
     --color-full-black:             #000;
 
     --color-red:                    #D24436;
@@ -21,7 +21,7 @@
     --color-green:                  #A8E6CF;
     --color-blue:                   #6B7C93;
 
-    --color-main-background:        #2C2F33;
+    --color-main-background:        #1B1E21;
 
     --color-font:                   #FFF;
     --color-links:                  #FFF;
@@ -47,10 +47,11 @@
     --leading-30:                   1.875rem;
     --leading-32:                   2rem;
     --leading-40:                   2.5rem;
+    --leading-48:                   3rem;
     --leading-50:                   3.125rem;
     --leading-56:                   3.5rem;
     --leading-66:                   4.125rem;
-    --leading-90:                   5.625rem;
+    --leading-96:                   6rem;
 
     --tracking-1: 0.0625rem; /* 1px */
     --tracking-2: 0.125rem; /* 2px */
