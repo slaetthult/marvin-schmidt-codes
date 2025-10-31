@@ -7,7 +7,7 @@ import Flag from "@components/partials/Flag.astro";
 <section class="hero-intro module !mb-95 lg:!mb-160" aria-labelledby="hero-intro-title" role="region">
     <div class="grid lg:items-center">
         <figure class="col-span-5 lg:col-span-4 lg:col-start-2" data-scroll-reveal>
-            <div data-image-tilt-effect class="relative -left-10 w-[calc(100%+10px)] lg:left-0 lg:w-full">
+            <div data-image-tilt-effect class="relative -left-10 w-[calc(100%+10px)] lg:left-0 lg:w-full [clip-path:polygon(75%_0%,_100%_50%,_75%_100%,_0%_100%,_25%_50%,_0%_0%)]">
                 <Image
                         src="/images/me.jpg"
                         width="333"
@@ -15,7 +15,7 @@ import Flag from "@components/partials/Flag.astro";
                         sizes={[
                             {
                                 viewportWidth: 1024,
-                                imageWidth: 454
+                                imageWidth: 476
                             },
                             {
                                 viewportWidth: 768,
@@ -31,20 +31,21 @@ import Flag from "@components/partials/Flag.astro";
                             }
                         ]}
                         loading="eager"
+                        className="scale-105"
                         fetchPriority="high"
-                        alt="A description of my image."
+                        alt="Portrait von Marvin Schmidt, Frontend Architect."
                 />
             </div>
         </figure>
         <div class="col-span-5 mt-30 lg:col-start-7 lg:mt-0">
             <Flag>Über mich</Flag>
-            <h1 class="text-green mb-15" id="hero-intro-title" data-scroll-reveal>Frontend Developer.</h1>
+            <h1 class="text-green mb-15" id="hero-intro-title" data-scroll-reveal>Frontend Architect.</h1>
             <p class="mt-9 lg:mt-30" data-scroll-reveal>
                 Mit Fokus auf <strong>Performance</strong>, <strong>Accessibility</strong> und <strong>sauberen Code</strong>
                 entwickle ich Web-Erlebnisse, die Nutzer lieben und Unternehmen voranbringen –
                 <em>minimalistisch gedacht</em>, <em>detailverliebt umgesetzt</em>, vom Design bis zur fertigen Website.
             </p>
-            <Button className="w-full mt-18 lg:mt-28" href=`mailto:${import.meta.env.PUBLIC_CONTACT_EMAIL}` icon="send" data-scroll-reveal>Anschreiben</Button>
+            <Button className="mt-18 lg:mt-28" href=`mailto:${import.meta.env.PUBLIC_CONTACT_EMAIL}` icon="send" data-scroll-reveal>Anschreiben</Button>
         </div>
     </div>
 </section>

@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay, Scrollbar } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, Scrollbar, EffectFade } from 'swiper/modules';
 export const swiperSlider = {
 
     vars: {
@@ -54,7 +54,7 @@ export const swiperSlider = {
         }
 
         const options = {
-            modules: [Navigation, Pagination, Autoplay, Scrollbar],
+            modules: [Navigation, Pagination, Autoplay, Scrollbar, EffectFade],
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true

@@ -37,7 +37,7 @@
     h5,.h5,
     h6,.h6 {
         @apply
-        font-secondary text-green font-light;
+        font-secondary text-green font-light text-balance;
     }
 
     h1 a,.h1 a,
@@ -60,8 +60,8 @@
 
     h2, .h2 {
         @apply
-        text-40 leading-50
-        lg:text-48 lg:leading-56;
+        text-40 leading-42
+        lg:text-48 lg:leading-50;
     }
 
     h3, .h3 {
@@ -209,6 +209,6 @@
 
     ::selection {
         @apply
-        bg-blue text-white opacity-100;
+        bg-green text-black opacity-100;
     }
 }
