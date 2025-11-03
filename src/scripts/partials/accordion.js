@@ -74,7 +74,7 @@ export const accordion = {
             });
 
             setTimeout(() => {
-                if(window.innerWidth > 1024){
+                if(window.innerWidth >= 1024){
                     $content.style.width = expanded ? (812 + 'px') : '0';
                     $content.style.maxHeight = '';
                 } else {

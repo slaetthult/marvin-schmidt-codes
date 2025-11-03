@@ -76,7 +76,7 @@ const currentPageUrl = Astro.url;
         scrollReveal.init();
     });
 
-    if(window.innerWidth > 1024){
+    if(window.innerWidth >= 1024){
         import('@scripts/base/stars-effect').then((module) => {
             const { starsEffect } = module;
             starsEffect.init();
@@ -84,7 +84,7 @@ const currentPageUrl = Astro.url;
     }
     
     const $imageTiltElements = document.querySelector('*[data-image-tilt-effect]');
-    if($imageTiltElements && window.innerWidth > 1024){
+    if($imageTiltElements && window.innerWidth >= 1024){
         import('@scripts/base/image-tile-effect').then((module) => {
             const { imageTileEffect } = module;
             imageTileEffect.init();
