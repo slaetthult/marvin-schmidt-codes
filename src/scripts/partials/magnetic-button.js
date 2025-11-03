@@ -8,11 +8,11 @@ export const magneticButton = {
         const $magneticButtons = document.querySelectorAll(magneticButton.vars.queries.component);
 
         $magneticButtons.forEach((btn) => {
-            const maxDist = 120; // Radius in dem der Effekt greift
-            const maxOffset = 10; // maximale Bewegung in px
-            const lerp = 0.12; // Glätte des Effekts
-            const returnSpeed = 0.1; // Rückkehrgeschwindigkeit
-            const tiltMax = 6; // max. Rotationsgrad
+            const maxDist = 120;
+            const maxOffset = 10;
+            const lerp = 0.12;
+            const returnSpeed = 0.1;
+            const tiltMax = 6;
             let rect = btn.getBoundingClientRect();
 
             let targetX = 0, targetY = 0;
