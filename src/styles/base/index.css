@@ -61,13 +61,13 @@
     h2, .h2 {
         @apply
         text-40 leading-42
-        lg:text-48 lg:leading-50;
+        lg:text-59 lg:leading-56;
     }
 
     h3, .h3 {
         @apply
-        text-30 leading-30
-        lg:text-40 lg:leading-40;
+        text-25 leading-24
+        lg:text-36 lg:leading-32;
     }
 
     h4, .h4 {
@@ -121,7 +121,9 @@
     /* -------------------------------------------------------- */
 
     p {
+        @apply
 
+        lg:text-22 lg:leading-32;
     }
 
     figure img {

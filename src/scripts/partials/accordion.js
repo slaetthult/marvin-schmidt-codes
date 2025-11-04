@@ -11,13 +11,13 @@ export const accordion = {
         },
         icons: {
             plus: `
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-20 h-20">
-                    <path fill="#FFF" d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-33 h-33">
+                    <path fill="currentColor" d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
                 </svg>
             `,
             minus: `
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-20 h-20">
-                    <path fill="#FFF" d="M3.75 7.25a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-33 h-33">
+                    <path fill="currentColor" d="M3.75 7.25a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z" />
                 </svg>
             `
         }
@@ -75,7 +75,9 @@ export const accordion = {
 
             setTimeout(() => {
                 if(window.innerWidth >= 1024){
-                    $content.style.width = expanded ? (812 + 'px') : '0';
+                    const $wrapperElement = document.querySelector('.skills').querySelector('.grid');
+                    const expandedWidth = $wrapperElement.offsetWidth - 98 - 98 - 98 - 40;
+                    $content.style.width = expanded ? (expandedWidth + 'px') : '0';
                     $content.style.maxHeight = '';
                 } else {
                     $content.style.width = '';

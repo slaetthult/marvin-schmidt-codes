@@ -1,15 +1,27 @@
 ---
 
 import Accordion from "@components/partials/Accordion.astro";
+import Flag from "@components/partials/Flag.astro";
 ---
 
 <section class="skills module overflow-hidden" aria-labelledby="skills-title" id="skills" role="region" data-scroll-reveal>
-    <div class="grid">
-        <h2 id="skills-title" class="col-span-full lg:flex lg:flex-wrap mb-20">Skills</h2>
-        <div class="col-span-full lg:flex lg:flex-nowrap">
-            <Accordion className="bg-red text-white" openInitially={true}>
+    <div class="grid items-start">
+        <div class="col-span-6 lg:col-span-5">
+            <Flag>Kompetenzen</Flag>
+            <h2 id="skills-title" class="col-span-full lg:flex lg:flex-wrap mb-20 lg:mb-0">Mehr als Wissen – echte Fähigkeiten</h2>
+        </div>
+        <div class="col-span-6 lg:col-span-5 lg:col-start-7">
+            <p class="text-balance lg:mt-42">
+                Frontend-Entwicklung lebt von Veränderung – und ich wachse mit ihr. <strong>Neue Technologien, Tools und Perspektiven</strong> treiben mich an, meine Fähigkeiten stetig zu erweitern. <em>Stillstand ist keine Option</em>.
+            </p>
+        </div>
+        <div class="mt-40 col-span-full lg:flex lg:flex-nowrap lg:gap-0">
+            <Accordion className="bg-full-black" openInitially={true}>
                 <Fragment slot="title">
-                    Core Frontend
+                    <span class="pl-80">Core Frontend</span>
+                    <svg class="absolute lg:left-20 lg:top-20 lg:w-50 lg:h-50" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M16.25 11.25c.364 0 .704.145.984.391c.549.332.766-.034.766-.391V9.5c0-.825-.675-1.5-1.5-1.5h-2.75c-.356 0-.724-.216-.391-.766c.246-.28.391-.619.391-.984c0-.967-1.007-1.75-2.25-1.75s-2.25.783-2.25 1.75c0 .3.095.576.255.823c.507.673.136.927-.255.927H6.5C5.675 8 5 8.675 5 9.5v1.75c0 .391.254.762.928.244c.246-.149.522-.244.822-.244c.966 0 1.75 1.008 1.75 2.25s-.784 2.25-1.75 2.25c-.364 0-.704-.145-.984-.391c-.549-.332-.766.034-.766.391v2.75c0 .825.675 1.5 1.5 1.5h2.75c.391 0 .762-.254.243-.927a1.593 1.593 0 0 1-.243-.823c0-.967 1.007-1.75 2.25-1.75s2.25.783 2.25 1.75c0 .365-.145.704-.391.984c-.333.55.035.766.391.766h2.75c.825 0 1.5-.675 1.5-1.5v-2.75c0-.391-.254-.762-.928-.244a1.579 1.579 0 0 1-.822.244c-.966 0-1.75-1.008-1.75-2.25s.784-2.25 1.75-2.25z"/>
+                    </svg>
                 </Fragment>
                 <ul>
                     <li>HTML</li>
@@ -18,33 +30,21 @@ import Accordion from "@components/partials/Accordion.astro";
                 </ul>
             </Accordion>
 
-            <Accordion className="bg-orange text-white">
+            <Accordion className="bg-[#686C71]">
                 <Fragment slot="title">
-                    Frameworks
+                    <span class="pl-80">Architecture & Engineering</span>
+                    <svg class="absolute lg:left-20 lg:top-20 lg:w-50 lg:h-50" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="m6.75 21l-.25-2.2l2.85-7.85q.375.35.813.588t.937.362l-2.75 7.55L6.75 21Zm10.5 0l-1.6-1.55l-2.75-7.55q.5-.125.938-.363t.812-.587l2.85 7.85l-.25 2.2ZM12 11q-1.25 0-2.125-.875T9 8q0-.975.563-1.738T11 5.2V3h2v2.2q.875.3 1.438 1.063T15 8q0 1.25-.875 2.125T12 11Zm0-2q.425 0 .713-.288T13 8q0-.425-.288-.713T12 7q-.425 0-.713.288T11 8q0 .425.288.713T12 9Z"/>
+                    </svg>
                 </Fragment>
                 <p>Ich bin der Inhalt 2</p>
             </Accordion>
-            <Accordion className="bg-green-yellow text-white">
+            <Accordion className="bg-blue text-black">
                 <Fragment slot="title">
-                    Templating
-                </Fragment>
-                <p>Ich bin der Inhalt 2</p>
-            </Accordion>
-            <Accordion className="bg-dark-green text-white">
-                <Fragment slot="title">
-                    CMS & E-Commerce
-                </Fragment>
-                <p>Ich bin der Inhalt 2</p>
-            </Accordion>
-            <Accordion className="bg-water-blue text-white">
-                <Fragment slot="title">
-                    Tools & Integrationen
-                </Fragment>
-                <p>Ich bin der Inhalt 2</p>
-            </Accordion>
-            <Accordion className="bg-purple text-white">
-                <Fragment slot="title">
-                    Sonstiges
+                    <span class="pl-80">UX & Interface Design</span>
+                    <svg class="absolute lg:left-30 lg:top-33 lg:w-30 lg:h-30" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1025 1024">
+                        <path fill="currentColor" d="m692.43 487l65 65l-81 81q-9 9 0 18l17 17q9 9 18 0l81-81l125 125l-81 81q-9 9 0 17l17 18q9 9 18 0l81-81l63 63q9 9 9 22t-9 23l-160 160q-10 9-23 9t-22-9l-323-323l-188 188q-16 16-39 16t-39-16l-76-77q-16-16-16-38.5t16-38.5l188-188l-324-324q-9-9-9-22t9-22l160-161q10-9 23-9t22 9l63 63l-81 81q-9 9 0 18l17 17q9 9 18 0l81-81l125 125l-81 81q-9 9 0 18l17 17q9 9 18 0l81-81l65 66l317-317q16-16 38.5-16t38.5 16l77 77q16 16 16 38.5t-16 38.5zm-626 321q2 8 7 13l130 130q5 5 13 7q-5 10-8 12l-176 54q-24 0-28-4t-4-28l54-176q2-2 12-8z"/>
+                    </svg>
                 </Fragment>
                 <p>Ich bin der Inhalt 2</p>
             </Accordion>

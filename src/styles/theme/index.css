@@ -31,19 +31,24 @@
     --font-secondary:               "Space Grotesk", "Times New Roman", serif;
 
     --text-12:                      0.75rem;
+    --text-14:                      0.875rem;
     --text-16:                      1rem;
     --text-18:                      1.125rem;
     --text-20:                      1.25rem;
     --text-22:                      1.375rem;
     --text-24:                      1.5rem;
+    --text-25:                      1.5625rem;
     --text-30:                      1.875rem;
     --text-32:                      2rem;
+    --text-36:                      2.25rem;
     --text-40:                      2.5rem;
-    --text-48:                      3rem;
+    --text-59:                      3.6875rem;
     --text-64:                      4rem;
     --text-96:                      6rem;
+    --text-112:                      7rem;
 
     --leading-18:                   1.125rem;
+    --leading-24:                   1.5rem;
     --leading-30:                   1.875rem;
     --leading-32:                   2rem;
     --leading-40:                   2.5rem;
@@ -52,6 +57,8 @@
     --leading-56:                   3.5rem;
     --leading-66:                   4.125rem;
     --leading-96:                   6rem;
+    --leading-104:                  6.5rem;
+
 
     --tracking-1: 0.0625rem; /* 1px */
     --tracking-2: 0.125rem; /* 2px */
@@ -61,4 +68,10 @@
 
     --default-transition-duration:  400ms;
     --tw-duration:                  400ms;
+
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1440px;
 }
