@@ -7,7 +7,7 @@ export const imageTileEffect = {
         const $elements = document.querySelectorAll(imageTileEffect.vars.element);
 
         for(const $element of $elements){
-            const image = $element.querySelector('img');
+            const image = $element?.querySelector('img') || $element;
 
             $element.addEventListener('mousemove', (e) => {
                 const rect = $element.getBoundingClientRect();

@@ -1,7 +1,7 @@
 @layer components {
     .module {
         @apply
-        my-75
-        lg:my-140;
+        my-120
+        lg:my-200;
     }
 }
