@@ -38,7 +38,7 @@ const randomId = generateRandomString();
     import { lazyLoadWhenIdle } from '@scripts/utils/lazy-load-when-idle';
     lazyLoadWhenIdle(() => import('@scripts/partials/accordion.js'), {
         selector: '*[data-accordion]',
-        rootMargin: '0px 0px 10% 0px',
+        rootMargin: '0px 0px 20% 0px',
         onLoad: ({ accordion }) => accordion?.init?.()
     });
 </script>
