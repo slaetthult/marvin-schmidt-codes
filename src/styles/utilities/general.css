@@ -31,4 +31,14 @@
         scrollbar-width: none;
     }
 
+    @keyframes bg-pan {
+        0% { background-position: 0 20%; }
+        50% { background-position: 100% 20%; }
+        100% { background-position: 0 20%; }
+    }
+    .bg-animate {
+        background-size: 500% 500%;
+        animation: bg-pan 10s ease infinite;
+    }
+
 }

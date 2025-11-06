@@ -1,59 +1,42 @@
 ---
 import Button from "@components/partials/Button.astro";
+import Flag from "@components/partials/Flag.astro";
+import IconInstagram from "@components/icons/IconInstagram.astro";
 ---
-
-<!--
-<section aria-label="Instagram">
-    <div class="grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
-        {items.map((p) => (
-                <a href={p.url} target="_blank" rel="noopener noreferrer" aria-label="Instagram Post">
-                    <img src={p.src} alt={p.alt} loading="lazy" style="width:100%;height:auto;border-radius:12px;object-fit:cover;" />
-                </a>
-        ))}
-    </div>
-</section>
--->
-
-<footer class="site-footer" id="kontakt" data-scroll-reveal>
-    <div class="grid">
-        <div class="col-span-6 lg:col-span-4">
-
-            <div class="h2">Hast du ein Projekt im Sinn?</div>
-            <figure class="post-1">
-            </figure>
-            <div class="post-2"></div>
-            <div class="post-3"></div>
+<footer class="site-footer pb-120" id="kontakt">
+    <div class="grid relative lg:items-between">
+        <div class="col-span-6 lg:col-span-4 lg:row-span-2">
+            <div data-scroll-reveal class="h2 text-112 leading-110 font-extrabold bg-[url('/images/rainbow-vortex.svg')] bg-animate bg-cover bg-clip-text text-transparent">
+                Hast du ein Projekt im Sinn?
+            </div>
+        </div>
+        <div class="col-span-6 lg:col-span-4 lg:col-start-6 pt-9">
+            <Flag>Kontakt</Flag>
+            <p data-scroll-reveal>
+                Ich freue mich immer, mein Netzwerk zu erweitern – für spannende Projekte, einen lockeren Austausch oder Empfehlungen.
+            </p>
+            <a data-scroll-reveal href={import.meta.env.PUBLIC_INSTAGRAM_LINK} target="_blank" class="flex items-center mt-10 mb-20 no-underline" title="Zu Instagram">
+                <IconInstagram className="w-35 h-35" /> <span class="inline-block ml-10">Instagram</span>
+            </a>
+            <div data-scroll-reveal>
+                <Button className="mt-18 lg:mt-28" href=`mailto:${import.meta.env.PUBLIC_CONTACT_EMAIL}` icon="send">Anschreiben</Button>
+            </div>
+        </div>
+        <div class="flex items-end col-span-6 lg:col-span-7 lg:col-start-6">
+            <nav class="w-1/2 lg:text-left">
+                <ul class="flex justify-center lg:justify-start pb-5">
+                    <li data-scroll-reveal class="mx-20 lg:ml-0">
+                        <a class="inline-block text-18 leading-38" href="/impressum">Impressum</a>
+                    </li>
+                    <li data-scroll-reveal class="mx-20 lg:mx-0">
+                        <a class="inline-block text-18 leading-38" href="/datenschutz">Datenschutzrichtlinien</a>
+                    </li>
+                </ul>
+            </nav>
+            <p data-scroll-reveal class="absolute top-320 right-47 origin-bottom-right rotate-90 text-18">
+                © {new Date().getFullYear()} Marvin Schmidt Codes
+            </p>
         </div>
 
     </div>
 </footer>
-
-<!--
-<footer class="site-footer border-t-1 mt-200 pt-55 pb-120 lg:pt-70 lg:pb-12" id="kontakt" data-scroll-reveal>
-    <div class="grid">
-        <div class="col-span-12 lg:col-span-5 lg:col-start-2">
-            <h2 class="h3 mb-15">Hast du ein Projekt im Sinn?</h2>
-            <p>Ob Projektanfrage, Zusammenarbeit oder einfach nur ein Hallo - schreibe mit gerne eine Nachricht.</p>
-        </div>
-        <div class="col-span-12 lg:col-span-4 lg:col-start-8">
-            <Button href=`mailto:${import.meta.env.PUBLIC_CONTACT_EMAIL}` className="!block -ml-10 !w-[calc(100%+20px)] my-20 lg:!ml-0 lg:!w-full">Nachricht an <br> <span class="inline underline">{import.meta.env.PUBLIC_CONTACT_EMAIL}</span> <br> schreiben</Button>
-        </div>
-    </div>
-    <hr class="my-45 lg:my-65 lg:mb-10">
-    <div class="grid text-center text-16">
-        <nav class="col-span-6 lg:text-left">
-            <ul class="flex justify-center lg:justify-start">
-                <li class="mx-7 lg:ml-0">
-                    <a class="inline-block leading-38" href="/impressum">Impressum</a>
-                </li>
-                <li class="mx-7 lg:mx-0">
-                    <a class="inline-block leading-38" href="/datenschutz">Datenschutzrichtlinien</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="col-span-6 mt-5 lg:text-right">
-            © 2025 Marvin Schmidt Codes
-        </div>
-    </div>
-</footer>
--->

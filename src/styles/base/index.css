@@ -107,7 +107,8 @@
     a:not(.button),
     .link {
         @apply
-        underline transition-colors;
+        underline transition-colors
+        lg:text-22 lg:leading-32;
     }
 
     a:not(.button):hover,
@@ -121,9 +122,7 @@
     /* -------------------------------------------------------- */
 
     p {
-        @apply
-
-        lg:text-22 lg:leading-32;
+        @apply lg:text-22 lg:leading-32;
     }
 
     figure img {
