@@ -24,7 +24,7 @@ export default defineConfig({
     integrations: [alpine(), sitemap(), robotsTxt(robotsConfig)],
     prefetch: {
         prefetchAll: true,
-        defaultStrategy: 'viewport'
+        defaultStrategy: 'load'
     },
     image: {
         service: {
