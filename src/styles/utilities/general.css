@@ -41,4 +41,16 @@
         animation: bg-pan 10s ease infinite;
     }
 
+    [data-parallax] {
+        position: relative;
+        overflow: hidden;
+    }
+
+    [data-parallax] img {
+        width: 100%;
+        height: auto;
+        display: block;
+        will-change: transform;
+    }
+
 }

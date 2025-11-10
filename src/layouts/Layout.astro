@@ -71,9 +71,17 @@ const currentPageUrl = Astro.url;
 </html>
 
 <script>
+    import { lazyLoadWhenIdle } from '@scripts/utils/lazy-load-when-idle';
+
     import('@scripts/base/scroll-reveal').then((module) => {
         const { scrollReveal } = module;
         scrollReveal.init();
+    });
+
+    lazyLoadWhenIdle(() => import('@scripts/base/image-parallax.js'), {
+        selector: '*[data-parallax]',
+        rootMargin: '0px 0px 20% 0px',
+        onLoad: ({ imageParallax }) => imageParallax?.init?.()
     });
 
     if(window.innerWidth >= 1024){
