@@ -49,8 +49,15 @@ const service: ExternalImageService = {
 
         const base = `https://res.cloudinary.com/${cfg.cloudName}/image/${cfg.deliveryType ?? "fetch"}`;
 
+        const rawBaseTransforms = cfg.baseTransforms ?? ["f_auto", "q_auto"];
+        // If a specific format was requested, remove any `f_...` transforms from base transforms
+        // so we don't end up with both `f_auto` and `f_avif` for example.
+        const baseTransforms = options.format
+            ? rawBaseTransforms.filter((t) => !/^f_/.test(t))
+            : rawBaseTransforms;
+
         const parts = [
-            ...(cfg.baseTransforms ?? ["f_auto", "q_auto"]),
+            ...baseTransforms,
             options.width && `w_${options.width}`,
             mapFitToCloudinary(options.fit),
             options.format && `f_${options.format}`,
