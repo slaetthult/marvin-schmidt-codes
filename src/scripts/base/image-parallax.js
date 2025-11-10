@@ -17,7 +17,11 @@ export const imageParallax = {
 
                 // Move and scale the image
                 const yPos = scrollTop * speed;
-                const scale = 1 + Math.abs(speed) * 0.3; // zoom in slightly based on speed
+                let scale = 1 + Math.abs(speed) * 0.3; // zoom in slightly based on speed
+
+                if(window.innerWidth < 768){
+                    scale = 1;
+                }
 
                 img.style.transform = `translateY(${yPos}px) scale(${scale})`;
             });
