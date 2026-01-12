@@ -149,7 +149,7 @@
     input[type="url"],
     textarea {
         @apply
-        border-1 w-full px-10 py-6 text-base;
+        transition-all border-1 w-full px-12 py-6 text-base text-20 bg-black focus:outline-none invalid:border-ui-red invalid:focus:border-ui-red;
     }
 
     input[type="text"]::placeholder,

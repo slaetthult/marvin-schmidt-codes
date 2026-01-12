@@ -4,10 +4,11 @@ const {
     icon = '',
     className = '',
     target = '',
+    type = 'button',
     ...props
 } = Astro.props;
 
-const buttonClass = `button relative inline-flex w-auto items-center justify-center py-10 px-50 bg-blue text-center text-black text-16 leading-28 font-medium tracking-2 duration-200 ease-out will-change-transform z-3 bg-gradient-to-r from-green to-blue ${className}`;
+const buttonClass = `button relative inline-flex w-auto items-center justify-center py-10 px-50 bg-blue cursor-pointer text-center text-black text-16 leading-28 font-medium tracking-2 duration-200 ease-out will-change-transform z-3 bg-gradient-to-r from-green to-blue ${className}`;
 let iconSVG = '';
 
 if(icon === 'send'){
@@ -37,7 +38,7 @@ if(icon === 'send'){
     </a>
 }
 {!href &&
-    <button data-magnetic-button class={buttonClass} type="button" {...props}>
+    <button data-magnetic-button class={buttonClass} type={type} {...props}>
         <Fragment set:html={iconSVG}/>
         <slot/>
     </button>

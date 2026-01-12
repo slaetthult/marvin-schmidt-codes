@@ -1,0 +1,18 @@
+---
+const {
+    name = '',
+    label = '',
+    required = false,
+    minlength = '',
+    maxlength = '',
+    errorMessage = 'Pflichtfeld',
+    rows = '3'
+} = Astro.props;
+---
+<label class="relative block pt-40">
+    <textarea name={name} data-value="" data-validation-required={required ? 'true' : undefined} rows={rows} minlength={minlength} maxlength={maxlength} placeholder="" class="peer text-18"></textarea>
+    <span class="absolute top-45 left-12 text-18 transition-all peer-not-placeholder-shown:top-14 peer-not-placeholder-shown:left-0 peer-not-placeholder-shown:text-16">{label}</span>
+    {errorMessage &&
+        <small class="text-16 -mb-10 -mt-10 hidden peer-invalid:block">{errorMessage}</small>
+    }
+</label>

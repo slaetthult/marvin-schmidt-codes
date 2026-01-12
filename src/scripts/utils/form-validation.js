@@ -3,7 +3,7 @@ export const formValidation = {
     vars: {
 
         queries: {
-            form:                           '*[data-js=form-validation]',
+            form:                           '*[data-form-validation]',
             password:                       '*[type=password]',
         },
 
