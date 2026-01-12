@@ -17,8 +17,7 @@ import Textarea from "@components/partials/Textarea.astro";
             <p>
                 Ich freue mich immer, mein Netzwerk zu erweitern – für spannende Projekte, einen lockeren Austausch oder Empfehlungen.
             </p>
-            <form name="contact" method="POST" data-form-validation netlify class="form-validation">
-
+            <form name="contact" method="POST" data-form-validation netlify class="form-validation" action="/nachricht-verschickt">
                 <Input type="email" name="email" required={true} label="E-Mail-Adresse:" errorMessage="Pflichtfeld" />
                 <Textarea name="message" required={true} label="Nachricht:" errorMessage="Deine Nachricht ist zu kurz" />
                 <Button className="mt-28 lg:mt-28" icon="send" type="submit">Abschicken</Button>

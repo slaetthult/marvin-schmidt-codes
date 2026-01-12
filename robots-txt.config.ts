@@ -4,7 +4,9 @@ const robotsConfig: RobotsTxtOptions = {
     policy: [
         {
             userAgent: '*',
-            disallow: ''
+            disallow: [
+                '/nachricht-verschickt'
+            ]
         }
     ],
     sitemapBaseFileName: 'sitemap-index' // default 'sitemap-index'
