@@ -55,11 +55,26 @@ export const anchorNavigation = {
 
             if(isAtTopOfViewport($section, anchorNavigation.vars.isAtTopOfViewportOffset)){
                 $anchorLink.classList.add('active');
+                anchorNavigation.centerActiveLink($anchorNavigation.querySelector('ol'), $anchorLink);
             } else {
                 $anchorLink.classList.remove('active');
             }
         }
 
+    },
+    centerActiveLink($container, $activeItem) {
+        if (!$activeItem || !$container) return;
+
+        const containerWidth = $container.offsetWidth;
+        const itemOffsetLeft = $activeItem.offsetLeft;
+        const itemWidth = $activeItem.offsetWidth;
+
+        const scrollTarget = itemOffsetLeft - (containerWidth / 2) + (itemWidth / 2);
+
+        $container.scrollTo({
+            left: scrollTarget,
+            behavior: 'smooth'
+        });
     },
     linkSmoothScroll(event = null){
         if(!event){
