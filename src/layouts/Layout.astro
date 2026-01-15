@@ -28,11 +28,11 @@ const currentPageUrl = Astro.url;
         <meta property="og:description" content="Mit Fokus auf Performance, Accessibility und sauberen Code entwickle ich Web-Erlebnisse, die Nutzer lieben und Unternehmen voranbringen – minimalistisch gedacht, detailverliebt umgesetzt, vom Design bis zur fertigen Website.">
         <meta property="og:type" content="website">
         <meta property="og:url" content={import.meta.env.PUBLIC_PAGE_URL}>
-        <meta property="og:image" content="">
+        <meta property="og:image" content=`${import.meta.env.PUBLIC_PAGE_URL}/share-image.png`>
 
         <meta name="twitter:title" content="Marvin Schmidt - Frontend Developer">
         <meta name="twitter:description" content="Mit Fokus auf Performance, Accessibility und sauberen Code entwickle ich Web-Erlebnisse, die Nutzer lieben und Unternehmen voranbringen – minimalistisch gedacht, detailverliebt umgesetzt, vom Design bis zur fertigen Website.">
-        <meta name="twitter:image" content="">
+        <meta name="twitter:image" content=`${import.meta.env.PUBLIC_PAGE_URL}/share-image.png`>
         <meta name="twitter:card" content="summary">
 
         <link rel="canonical" href={currentPageUrl}>
