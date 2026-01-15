@@ -20,7 +20,7 @@ const currentPageUrl = Astro.url;
             <meta name="robots" content="noindex, nofollow">
         }
 		<meta name="description" content="Mit Fokus auf Performance, Accessibility und sauberen Code entwickle ich Web-Erlebnisse, die Nutzer lieben und Unternehmen voranbringen – minimalistisch gedacht, detailverliebt umgesetzt, vom Design bis zur fertigen Website.">
-        <meta name="viewport" content="width=device-width, initial-scale=1 viewport-fit=cover">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 		<meta name="generator" content={Astro.generator}>
         <meta http-equiv="Content-Security-Policy" content="font-src 'self';">
 
@@ -65,6 +65,21 @@ const currentPageUrl = Astro.url;
             border-radius: 0 !important;
         }
         </style>
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Marvin Schmidt",
+                "jobTitle": "Senior Frontend Developer",
+                "url": "https://marvin-schmidt-codes.website",
+                "image": "https://marvin-schmidt-codes.website/share-image.png",
+                "sameAs": [
+                    "https://www.instagram.com/marvincschmidt"
+                ]
+            }
+        </script>
+
 	</head>
 	<body class="font-primary bg-main-background text-white font-extralight text-xl lg:text-2xl leading-28 lg:leading-32">
         <SiteHeader/>
