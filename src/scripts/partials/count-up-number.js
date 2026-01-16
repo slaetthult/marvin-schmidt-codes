@@ -2,6 +2,9 @@ export const countUpNumber = {
     vars: {
         attributes: {
             component:                  'data-count-up-number',
+        },
+        values: {
+            duration:                   3500
         }
     },
     init(){
@@ -13,7 +16,7 @@ export const countUpNumber = {
                     if (entry.isIntersecting) {
                         const el = entry.target;
                         const target = +el.getAttribute(countUpNumber.vars.attributes.component);
-                        const duration = 2500; // ms
+                        const duration = countUpNumber.vars.values.duration; // ms
                         const frameRate = 1000 / 60; // 60 fps
                         const totalFrames = Math.round(duration / frameRate);
                         let frame = 0;
