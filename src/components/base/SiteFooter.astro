@@ -5,7 +5,7 @@ import IconInstagram from "@components/icons/IconInstagram.astro";
 import Input from "@components/partials/Input.astro";
 import Textarea from "@components/partials/Textarea.astro";
 
-const version = import.meta.env.PUBLIC_APP_VERSION;
+const version = import.meta.env.PUBLIC_APP_VERSION?.slice(0, 7);
 ---
 <footer data-scroll-reveal class="site-footer pb-120" id="kontakt">
     <div class="grid relative lg:items-between">
