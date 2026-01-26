@@ -1,2 +1,2 @@
 [build]
-command = "PUBLIC_APP_VERSION=$COMMIT_REF npm run build"
+command = "PUBLIC_APP_VERSION=1.$BUILD_ID npm run build"
