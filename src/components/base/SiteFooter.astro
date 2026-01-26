@@ -4,6 +4,8 @@ import Flag from "@components/partials/Flag.astro";
 import IconInstagram from "@components/icons/IconInstagram.astro";
 import Input from "@components/partials/Input.astro";
 import Textarea from "@components/partials/Textarea.astro";
+
+const version = import.meta.env.PUBLIC_APP_VERSION;
 ---
 <footer data-scroll-reveal class="site-footer pb-120" id="kontakt">
     <div class="grid relative lg:items-between">
@@ -35,7 +37,7 @@ import Textarea from "@components/partials/Textarea.astro";
                 </ul>
             </nav>
             <p class="lg:absolute lg:top-320 lg:right-47 lg:origin-bottom-right lg:rotate-90 lg:text-18">
-                © {new Date().getFullYear()} Marvin Schmidt Codes
+                © {new Date().getFullYear()} Marvin Schmidt Codes | Version: {version}
             </p>
         </div>
 
