@@ -23,7 +23,7 @@ export const lazyLoadWhenIdle = (importerOrSpecifier, options = {}) => {
         onLoad,
         timeout = 2000,
         threshold = 0.1,
-        rootMargin = '0px 0px -10% 0px',
+        rootMargin = '0px 0px 0px 0px',
         once = true,
     } = options;
 
