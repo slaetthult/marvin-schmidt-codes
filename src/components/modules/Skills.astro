@@ -18,7 +18,7 @@ import IconHTML from "@components/icons/IconHTML.astro";
         </div>
         <div data-scroll-reveal class="mt-40 col-span-full">
             <div class="-ml-10 w-[calc(100%+20px)] lg:ml-0 lg:w-full lg:flex lg:flex-nowrap lg:gap-0">
-                <Accordion className="bg-full-black" openInitially={true}>
+                <Accordion className="bg-full-black" openInitially={true} title="Kompetenzen zu Core Frontend anzeigen oder ausblenden">
                     <Fragment slot="title">
                         <span class="inline-block pl-80 pr-80">Core Frontend</span>
                         <svg class="absolute left-20 top-1/2 -translate-y-1/2 w-40 h-40 lg:left-20 lg:top-20 lg:w-50 lg:h-50 lg:translate-none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -91,7 +91,7 @@ import IconHTML from "@components/icons/IconHTML.astro";
                     </ul>
                 </Accordion>
 
-                <Accordion className="bg-[#686C71]">
+                <Accordion className="bg-[#686C71]" title="Kompetenzen zu Architecture & Engineering anzeigen oder ausblenden">
                     <Fragment slot="title">
                         <span class="inline-block pl-80 pr-80">Architecture & Engineering</span>
                         <svg class="absolute left-18 top-1/2 -translate-y-1/2 w-40 h-40 lg:left-20 lg:top-20 lg:w-50 lg:h-50 lg:translate-none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -181,7 +181,7 @@ import IconHTML from "@components/icons/IconHTML.astro";
                         </li>
                     </ul>
                 </Accordion>
-                <Accordion className="bg-blue text-black">
+                <Accordion className="bg-blue text-black" title="Kompetenzen zu UX & Interface Design anzeigen oder ausblenden">
                     <Fragment slot="title">
                         <span class="inline-block pl-80 pr-80">UX & Interface Design</span>
                         <svg class="absolute left-26 top-1/2 -translate-y-1/2 w-26 h-26 lg:left-30 lg:top-33 lg:w-30 lg:h-30 lg:translate-none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1025 1024">

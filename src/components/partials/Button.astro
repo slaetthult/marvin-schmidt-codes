@@ -3,6 +3,7 @@ const {
     href = '',
     icon = '',
     className = '',
+    title = '',
     target = '',
     type = 'button',
     ...props
@@ -38,13 +39,13 @@ if(icon === 'send'){
 }
 ---
 {href &&
-    <a data-magnetic-button href={href} class={buttonClass} target={target} rel={target === '_blank' ? 'noopener noreferrer' : ''} {...props}>
+    <a data-magnetic-button href={href} title={title} class={buttonClass} target={target} rel={target === '_blank' ? 'noopener noreferrer' : ''} {...props}>
         <Fragment set:html={iconSVG}/>
         <slot/>
     </a>
 }
 {!href &&
-    <button data-magnetic-button class={buttonClass} type={type} {...props}>
+    <button data-magnetic-button class={buttonClass} title={title} type={type} {...props}>
         <Fragment set:html={iconSVG}/>
         <slot/>
     </button>
