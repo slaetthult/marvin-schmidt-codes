@@ -11,13 +11,13 @@ const version = import.meta.env.PUBLIC_APP_VERSION?.slice(0, 3);
     <div class="grid relative lg:items-between">
         <div class="col-span-6 mb-30 lg:mb-0 lg:col-span-4 lg:row-span-2">
             <div class="h2 text-64 leading-66 lg:text-112 lg:leading-110 font-extrabold bg-[url('/images/rainbow-vortex.svg')] bg-animate bg-cover bg-clip-text text-transparent">
-                Hast du ein Projekt im Sinn?
+                Hast du eine Idee?
             </div>
         </div>
         <div class="col-span-6 lg:col-span-4 lg:col-start-6 pt-9">
             <Flag>Kontakt</Flag>
             <p>
-                Ich freue mich immer, mein Netzwerk zu erweitern – für spannende Projekte, einen lockeren Austausch oder Empfehlungen.
+                Ich freue mich immer, mein Netzwerk zu erweitern – für einen lockeren Austausch oder fachliche Empfehlungen.
             </p>
             <form name="contact" method="POST" data-form-validation netlify class="form-validation" action="/nachricht-verschickt">
                 <Input type="email" name="email" required={true} label="E-Mail-Adresse:" errorMessage="Pflichtfeld" />
