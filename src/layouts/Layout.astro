@@ -98,19 +98,29 @@ const currentPageUrl = Astro.url;
 
         <script type="application/ld+json" is:inline>
             {
-                "@context": "https://schema.org",
-                "@type": "Person",
-                "name": "Marvin Schmidt",
-                "jobTitle": [
-                    "Frontend Architect",
-                    "Senior Frontend Developer"
-                ],
-                "description": "Senior Frontend Developer mit Fokus auf Performance, Accessibility und sauberen Code entwickle ich moderne Web-Erlebnisse – minimalistisch gedacht, detailverliebt umgesetzt.",
-                "url": "https://marvin-schmidt-codes.website",
-                "image": "https://marvin-schmidt-codes.website/share-image.png",
-                "sameAs": [
-                    "https://www.instagram.com/marvincschmidt"
-                ]
+                    "@context": "https://schema.org",
+                    "@type": "Person",
+                    "@id": "https://marvin-schmidt-codes.website#person",
+                    "name": "Marvin Schmidt",
+                    "jobTitle": [
+                            "Frontend Architect",
+                            "Senior Frontend Developer"
+                    ],
+                    "description": "Senior Frontend Developer und Architect mit Fokus auf Performance, Accessibility und sauberen Code.",
+                    "url": "https://marvin-schmidt-codes.website",
+                    "image": {
+                            "@type": "ImageObject",
+                            "url": "https://res.cloudinary.com/marvinschmidtcodes/image/fetch/q_auto,w_1200,h_1200,c_fit,f_jpg/https://marvin-schmidt-codes.website/images/marvin_schmidt_profile.jpg",
+                            "width": 1200,
+                            "height": 1200
+                    },
+                    "sameAs": [
+                            "https://www.instagram.com/marvincschmidt"
+                    ],
+                    "mainEntityOfPage": {
+                            "@type": "WebPage",
+                            "@id": "https://marvin-schmidt-codes.website"
+                    }
             }
         </script>
 
