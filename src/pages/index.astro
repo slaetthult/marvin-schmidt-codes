@@ -9,6 +9,23 @@ import Services from "@components/modules/Services.astro";
 ---
 
 <Layout title="Marvin Schmidt - Senior Frontend Developer">
+    <Fragment slot="head">
+        <link rel="preload" as="image" type="image/avif" fetchpriority="high"
+            imagesrcset="https://res.cloudinary.com/marvinschmidtcodes/image/fetch/q_auto,w_333,f_avif/https://marvin-schmidt-codes.website/images/marvin_schmidt_profile.jpg 333w,
+                https://res.cloudinary.com/marvinschmidtcodes/image/fetch/q_auto,w_454,f_avif/https://marvin-schmidt-codes.website/images/marvin_schmidt_profile.jpg 454w,
+                https://res.cloudinary.com/marvinschmidtcodes/image/fetch/q_auto,w_476,f_avif/https://marvin-schmidt-codes.website/images/marvin_schmidt_profile.jpg 476w,
+                https://res.cloudinary.com/marvinschmidtcodes/image/fetch/q_auto,w_666,f_avif/https://marvin-schmidt-codes.website/images/marvin_schmidt_profile.jpg 666w,
+                https://res.cloudinary.com/marvinschmidtcodes/image/fetch/q_auto,w_844,f_avif/https://marvin-schmidt-codes.website/images/marvin_schmidt_profile.jpg 844w,
+                https://res.cloudinary.com/marvinschmidtcodes/image/fetch/q_auto,w_908,f_avif/https://marvin-schmidt-codes.website/images/marvin_schmidt_profile.jpg 908w,
+                https://res.cloudinary.com/marvinschmidtcodes/image/fetch/q_auto,w_952,f_avif/https://marvin-schmidt-codes.website/images/marvin_schmidt_profile.jpg 952w,
+                https://res.cloudinary.com/marvinschmidtcodes/image/fetch/q_auto,w_999,f_avif/https://marvin-schmidt-codes.website/images/marvin_schmidt_profile.jpg 999w,
+                https://res.cloudinary.com/marvinschmidtcodes/image/fetch/q_auto,w_1362,f_avif/https://marvin-schmidt-codes.website/images/marvin_schmidt_profile.jpg 1362w,
+                https://res.cloudinary.com/marvinschmidtcodes/image/fetch/q_auto,w_1428,f_avif/https://marvin-schmidt-codes.website/images/marvin_schmidt_profile.jpg 1428w,
+                https://res.cloudinary.com/marvinschmidtcodes/image/fetch/q_auto,w_1688,f_avif/https://marvin-schmidt-codes.website/images/marvin_schmidt_profile.jpg 1688w,
+                https://res.cloudinary.com/marvinschmidtcodes/image/fetch/q_auto,w_2532,f_avif/https://marvin-schmidt-codes.website/images/marvin_schmidt_profile.jpg 2532w"
+            imagesizes="(min-width: 1024px) 476px, (min-width: 768px) 844px, (min-width: 450px) 454px, 333px"
+        />
+    </Fragment>
     <HeroIntro />
     <AnchorNavigation />
     <Services/>

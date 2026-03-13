@@ -82,11 +82,20 @@ const service: ExternalImageService = {
 
     async getSrcSet(options) {
         const widthsFromOptions = options.widths ?? (options.width ? [options.width] : undefined);
-        // Reasonable default widths if none provided:
-        const baseWidths = widthsFromOptions ?? [320, 640, 768, 1024, 1280, 1600];
-
-        // Include retina widths by multiplying base widths with the configured DPRs.
         const cfg = (options as any)._imageConfig?.service?.config as ServiceConfig | undefined;
+        const maxW = cfg?.maxWidth ?? Infinity;
+
+        // If explicit widths were provided (already include retina variants),
+        // use them as-is without additional multiplication.
+        if (widthsFromOptions) {
+            return widthsFromOptions
+                .filter((w) => w <= maxW)
+                .sort((a, b) => a - b)
+                .map((w) => ({ transform: { ...options, width: w }, descriptor: `${w}w` }));
+        }
+
+        // For default widths, include retina variants.
+        const baseWidths = [320, 640, 768, 1024, 1280, 1600];
         const retinaDPRs = [1.8, 2, 3];
 
         const allWidths = new Set<number>();
@@ -97,11 +106,8 @@ const service: ExternalImageService = {
             }
         }
 
-        // Respect maxWidth if configured.
-        const maxW = cfg?.maxWidth ?? Infinity;
         const finalWidths = [...allWidths].filter((w) => w <= maxW).sort((a, b) => a - b);
 
-        // Map to width-descriptor srcset items.
         return finalWidths.map((w) => ({
             transform: { ...options, width: w },
             descriptor: `${w}w`,

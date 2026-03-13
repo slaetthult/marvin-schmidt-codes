@@ -86,6 +86,8 @@ const currentPageUrl = Astro.url;
 
 		<title>{title}</title>
 
+        <slot name="head" />
+
         <style is:inline>
         #cookiescript_accept {
             color: #1C1C1C !important;
