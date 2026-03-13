@@ -67,7 +67,10 @@ const currentPageUrl = Astro.url;
 
         <link rel="canonical" href={currentPageUrl}>
 
-        <script type="text/javascript" charset="UTF-8" src="//cdn.cookie-script.com/s/ae334739f32918479c72d8391642d48e.js"></script>
+        <link rel="preconnect" href="https://cdn.cookie-script.com">
+        <link rel="preconnect" href="https://res.cloudinary.com">
+
+        <script async src="//cdn.cookie-script.com/s/ae334739f32918479c72d8391642d48e.js"></script>
 
         <link rel="preload" href="/fonts/poppins-v24-latin/poppins-v24-latin-200.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/fonts/poppins-v24-latin/poppins-v24-latin-200italic.woff2" as="font" type="font/woff2" crossorigin>
