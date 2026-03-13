@@ -54,16 +54,21 @@ const currentPageUrl = Astro.url;
 		<meta name="generator" content={Astro.generator}>
         <meta http-equiv="Content-Security-Policy" content="font-src 'self';">
 
-        <meta property="og:title" content="Marvin Schmidt - Frontend Developer">
+        <meta property="og:title" content={title}>
         <meta property="og:description" content="Mit Fokus auf Performance, Accessibility und sauberen Code entwickle ich moderne Web-Erlebnisse – minimalistisch gedacht, detailverliebt umgesetzt.">
         <meta property="og:type" content="website">
-        <meta property="og:url" content={import.meta.env.PUBLIC_PAGE_URL}>
+        <meta property="og:url" content={currentPageUrl}>
+        <meta property="og:site_name" content="Marvin Schmidt Codes">
+        <meta property="og:locale" content="de_DE">
         <meta property="og:image" content=`${import.meta.env.PUBLIC_PAGE_URL}/share-image.png`>
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:alt" content="Marvin Schmidt – Senior Frontend Architect">
 
-        <meta name="twitter:title" content="Marvin Schmidt - Frontend Developer">
+        <meta name="twitter:title" content={title}>
         <meta name="twitter:description" content="Mit Fokus auf Performance, Accessibility und sauberen Code entwickle ich moderne Web-Erlebnisse – minimalistisch gedacht, detailverliebt umgesetzt.">
         <meta name="twitter:image" content=`${import.meta.env.PUBLIC_PAGE_URL}/share-image.png`>
-        <meta name="twitter:card" content="summary">
+        <meta name="twitter:card" content="summary_large_image">
 
         <link rel="canonical" href={currentPageUrl}>
 
@@ -102,32 +107,60 @@ const currentPageUrl = Astro.url;
         </style>
 
         <script type="application/ld+json" is:inline>
-            {
+            [
+                {
                     "@context": "https://schema.org",
                     "@type": "Person",
                     "@id": "https://marvin-schmidt-codes.website#person",
                     "name": "Marvin Schmidt",
-                    "jobTitle": [
-                            "Frontend Architect",
-                            "Senior Frontend Developer",
-                        "Web Developer"
-                    ],
+                    "jobTitle": "Senior Frontend Architect",
                     "description": "Senior Frontend Developer und Architect mit Fokus auf Performance, Accessibility und sauberen Code.",
                     "url": "https://marvin-schmidt-codes.website",
                     "image": {
-                            "@type": "ImageObject",
-                            "url": "https://res.cloudinary.com/marvinschmidtcodes/image/fetch/q_auto,w_1200,h_1200,c_fit,f_jpg/https://marvin-schmidt-codes.website/images/marvin_schmidt_profile.jpg",
-                            "width": 1200,
-                            "height": 1200
+                        "@type": "ImageObject",
+                        "url": "https://res.cloudinary.com/marvinschmidtcodes/image/fetch/q_auto,w_1200,h_1200,c_fit,f_jpg/https://marvin-schmidt-codes.website/images/marvin_schmidt_profile.jpg",
+                        "width": 1200,
+                        "height": 1200
                     },
-                    "sameAs": [
-                            "https://www.instagram.com/marvincschmidt"
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Düsseldorf",
+                        "addressCountry": "DE"
+                    },
+                    "worksFor": {
+                        "@type": "Organization",
+                        "name": "active value GmbH",
+                        "url": "https://www.active-value.de/"
+                    },
+                    "alumniOf": {
+                        "@type": "EducationalOrganization",
+                        "name": "Albrecht-Dürer-Berufskolleg Düsseldorf"
+                    },
+                    "knowsAbout": [
+                        "HTML5", "CSS", "JavaScript", "TypeScript", "Vue.js", "Nuxt.js", "Astro", "Tailwind CSS", "SCSS", "Web Performance", "Web Accessibility", "Frontend Architecture", "Responsive Web Design", "SEO"
                     ],
-                    "mainEntityOfPage": {
-                            "@type": "WebPage",
-                            "@id": "https://marvin-schmidt-codes.website"
-                    }
-            }
+                    "knowsLanguage": [
+                        { "@type": "Language", "name": "Deutsch" },
+                        { "@type": "Language", "name": "Englisch" }
+                    ],
+                    "sameAs": [
+                        "https://www.instagram.com/marvincschmidt",
+                        "https://www.linkedin.com/in/marvin-schmidt-895936221/"
+                    ]
+                },
+                {
+                    "@context": "https://schema.org",
+                    "@type": "WebSite",
+                    "@id": "https://marvin-schmidt-codes.website#website",
+                    "url": "https://marvin-schmidt-codes.website",
+                    "name": "Marvin Schmidt Codes",
+                    "description": "Portfolio von Marvin Schmidt – Senior Frontend Architect aus Düsseldorf.",
+                    "author": {
+                        "@id": "https://marvin-schmidt-codes.website#person"
+                    },
+                    "inLanguage": "de-DE"
+                }
+            ]
         </script>
 
 	</head>
