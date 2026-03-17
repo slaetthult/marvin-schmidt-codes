@@ -1,3 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-    <rect width="32" height="32" fill="#A8E6CF"/>
+    <defs>
+        <clipPath id="clip">
+            <polygon points="9,0 32,0 32,23 23,32 0,32 0,9"/>
+        </clipPath>
+    </defs>
+    <polygon points="9,0 32,0 32,23 23,32 0,32 0,9" fill="#A8E6CF"/>
+    <g clip-path="url(#clip)">
+        <line x1="8"  y1="0" x2="8"  y2="32" stroke="#FFF" stroke-width="4" stroke-opacity="0.4"/>
+        <line x1="16" y1="0" x2="16" y2="32" stroke="#FFF" stroke-width="4" stroke-opacity="0.4"/>
+        <line x1="24" y1="0" x2="24" y2="32" stroke="#FFF" stroke-width="4" stroke-opacity="0.4"/>
+    </g>
+    <text x="16" y="16" dominant-baseline="central" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="17" fill="#14171A">MS</text>
+
 </svg>
