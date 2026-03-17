@@ -1,48 +1,76 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import Flag from "@components/partials/Flag.astro";
+import Button from "@components/partials/Button.astro";
 ---
 
 <Layout title="Marvin Schmidt - Impressum">
-    <div class="content-text">
-        <div class="grid">
-            <div class="col-span-12 lg:col-span-8 lg:col-start-2">
-                <h1 class="h2 mb-10">Impressum</h1>
-                <h2 class="h4 mb-35">
-                    Angaben gemäß § 5 TMG
-                </h2>
-                <p class="my-35">
-                    Marvin Schmidt <br>
-                    QED Commerce <br>
-                    Marbacher Straße 6<br>
-                    40597 Düsseldorf
-                </p>
-                <p class="my-35">
-                    <strong>Kontakt</strong><br>
-                    E-Mail: ms.qed.commerce@gmail.com
-                </p>
-                <p class="my-35">
-                    <strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>
-                    Marvin Schmidt<br>
-                    Marbacher Straße 6 <br>
-                    40597 Düsseldorf
-                </p>
-                <hr class="my-35">
-                <h2 class="h4 my-35">Haftungsausschluss (Disclaimer)</h2>
-                <p class="my-35">
-                    <strong>Haftung für Inhalte</strong><br>
+
+    <div class="grid mb-30 lg:mb-40 relative overflow-hidden">
+        <div class="col-span-6 lg:col-span-8 lg:col-start-2" data-scroll-reveal>
+            <Flag>Rechtliches</Flag>
+            <h1 class="bg-gradient-to-r from-green to-red bg-clip-text text-transparent mt-10 mb-20 lg:mb-30">
+                Impressum
+            </h1>
+            <p class="lg:text-22">
+                Pflichtangaben nach § 5 TMG
+            </p>
+        </div>
+    </div>
+
+    <div class="grid mb-55 lg:mb-90">
+        <div class="col-span-6 lg:col-span-4 lg:col-start-2 mb-30 lg:mb-0" data-scroll-reveal>
+            <strong class="text-14 uppercase tracking-widest text-green mb-15 font-normal">Anschrift</strong>
+            <p>
+                Marvin Schmidt<br>
+                QED Commerce<br>
+                Marbacher Straße 6<br>
+                40597 Düsseldorf
+            </p>
+        </div>
+        <div class="col-span-6 lg:col-span-4 lg:col-start-7" data-scroll-reveal>
+            <strong class="text-14 uppercase tracking-widest text-green mb-15 font-normal">E-Mail-Kontakt</strong>
+            <p>
+                <a href="mailto:ms.qed.commerce@gmail.com" class="no-underline hover:text-green transition-colors duration-200">
+                    ms.qed.commerce@gmail.com
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <div class="grid mb-70 lg:mb-100">
+        <div class="col-span-6 lg:col-span-8 lg:col-start-2">
+
+            <h2 class="mb-40 lg:mb-55" data-scroll-reveal>Haftungsausschluss</h2>
+
+            <div class="mb-35 lg:mb-50" data-scroll-reveal>
+                <strong class="text-14 uppercase tracking-widest text-green mb-12 font-normal">Haftung für Inhalte</strong>
+                <p>
                     Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.
                 </p>
-                <p class="my-35">
-                    <strong>Haftung für Links</strong><br>
+            </div>
+
+            <div class="mb-35 lg:mb-50" data-scroll-reveal>
+                <strong class="text-14 uppercase tracking-widest text-green mb-12 font-normal">Haftung für Links</strong>
+                <p>
                     Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte kein Einfluss besteht. Deshalb kann für diese fremden Inhalte keine Gewähr übernommen werden. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
                 </p>
+            </div>
+
+            <div data-scroll-reveal>
+                <strong class="text-14 uppercase tracking-widest text-green mb-12 font-normal">Urheberrecht</strong>
                 <p>
-                    <strong>Urheberrecht</strong><br>
                     Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung oder jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
                 </p>
             </div>
+
         </div>
     </div>
+
+    <div class="grid mt-55 lg:mt-90">
+        <div class="col-span-6 lg:col-span-10 lg:col-start-2" data-scroll-reveal>
+            <Button href="/" title="Zurück zur Startseite" icon="home">Startseite</Button>
+        </div>
+    </div>
+
 </Layout>
-
-
