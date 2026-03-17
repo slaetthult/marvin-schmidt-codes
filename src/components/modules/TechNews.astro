@@ -1,0 +1,109 @@
+---
+import Flag from "@components/partials/Flag.astro";
+import IconArrowExternal from "@components/icons/IconArrowExternal.astro";
+
+type Item = { title: string; link: string; pubDate: string; source: string };
+
+function decodeEntities(str: string): string {
+    return str
+        .replace(/&apos;/g, "'")
+        .replace(/&quot;/g, '"')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&#(\d+);/g, (_, c) => String.fromCharCode(Number(c)))
+        .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCharCode(parseInt(h, 16)))
+        .replace(/&amp;/g, '&');
+}
+
+function parseRss(xml: string, domain: string): Item[] {
+    const rawItems = xml.match(/<item>[\s\S]*?<\/item>/gi) ?? [];
+    return rawItems
+        .map((raw: string) => {
+            const title = decodeEntities((
+                raw.match(/<title><!\[CDATA\[([\s\S]*?)]]><\/title>/i)?.[1] ??
+                raw.match(/<title>([^<]*)<\/title>/i)?.[1] ?? ''
+            ).trim());
+
+            const link = (
+                raw.match(/<link>([\s\S]*?)<\/link>/i)?.[1] ??
+                raw.match(/<guid[^>]*>([\s\S]*?)<\/guid>/i)?.[1] ?? ''
+            ).trim();
+
+            const pubDate = (
+                raw.match(/<pubDate>([\s\S]*?)<\/pubDate>/i)?.[1] ?? ''
+            ).trim();
+
+            return { title, link, pubDate, source: domain };
+        })
+        .filter(i => i.title && i.link);
+}
+
+const SOURCES = [
+    { url: 'https://astro.build/rss.xml',         domain: 'astro.build'          },
+    { url: 'https://web.dev/feed.xml',             domain: 'web.dev'              },
+    { url: 'https://javascriptweekly.com/rss/',    domain: 'javascriptweekly.com' },
+];
+
+const results = await Promise.allSettled(
+    SOURCES.map(({ url, domain }) =>
+        fetch(url)
+            .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.text(); })
+            .then(xml => parseRss(xml, domain))
+    )
+);
+
+results.forEach((r, idx) => {
+    if (r.status === 'rejected')
+        console.warn(`[TechNews] RSS fetch failed (${SOURCES[idx].domain}):`, (r.reason as Error)?.message);
+});
+
+const items: Item[] = results
+    .flatMap(r => r.status === 'fulfilled' ? r.value.slice(0, 4) : [])
+    .sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime())
+    .slice(0, 6);
+
+function formatDate(str: string) {
+    if (!str) return '';
+    try {
+        return new Date(str).toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' });
+    } catch { return ''; }
+}
+---
+
+<section class="tech-news module" aria-labelledby="tech-news-title" id="tech-news" role="region">
+    <div class="grid">
+        <div class="col-span-6 lg:col-span-5">
+            <Flag>Im Netz</Flag>
+            <h2 data-scroll-reveal id="tech-news-title">Was die Community<br>gerade bewegt.</h2>
+        </div>
+        <div data-scroll-reveal class="col-span-6 lg:col-span-5 lg:col-start-7">
+            <p class="text-balance lg:mt-42">
+                Die neuesten Beiträge direkt von <strong>Astro</strong>, <strong>web.dev</strong> und <strong>JavaScript Weekly</strong> – Releases, Features und Neuigkeiten aus dem Web-Ökosystem.
+            </p>
+        </div>
+    </div>
+
+    {items.length > 0 && (
+        <div class="grid mt-40 lg:mt-55">
+            <ol class="col-span-6 lg:col-span-11 list-none bg-linear-to-b from-full-black to-transparent divide-y-5 divide-white/5">
+                {items.map((item) => (
+                    <li data-scroll-reveal>
+                        <a href={item.link} target="_blank" rel="noopener noreferrer"
+                            class="flex items-start lg:items-center gap-20 lg:gap-40 px-20 lg:px-30 py-22 lg:py-28 no-underline">
+                            <div class="flex-1 min-w-0 flex flex-col lg:flex-row lg:items-center lg:gap-40">
+                                <p class="text-18 lg:text-22 leading-30 flex-1">{item.title}</p>
+                                <div class="flex flex-col mt-6 gap-2 lg:mt-0 lg:items-end lg:shrink-0 leading-20">
+                                    <span class="text-14 font-bold">{item.source}</span>
+                                    <span class="text-14">{formatDate(item.pubDate)}</span>
+                                </div>
+                            </div>
+                            <span class="arrow-icon shrink-0">
+                                <IconArrowExternal class="w-24 h-24" />
+                            </span>
+                        </a>
+                    </li>
+                ))}
+            </ol>
+        </div>
+    )}
+</section>
