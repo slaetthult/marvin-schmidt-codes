@@ -91,14 +91,14 @@ function formatDate(str: string) {
                         <a href={item.link} target="_blank" rel="noopener noreferrer"
                             class="flex items-start lg:items-center gap-20 lg:gap-40 px-20 lg:px-30 py-22 lg:py-28 no-underline">
                             <div class="flex-1 min-w-0 flex flex-col lg:flex-row lg:items-center lg:gap-40">
-                                <p class="text-18 lg:text-22 leading-30 flex-1">{item.title}</p>
-                                <div class="flex flex-col mt-6 gap-2 lg:mt-0 lg:items-end lg:shrink-0 leading-20">
+                                <p class="text-18 lg:text-22 leading-22 flex-1">{item.title}</p>
+                                <div class="flex flex-col mt-12 gap-2 lg:mt-0 lg:items-end lg:shrink-0 leading-20">
                                     <span class="text-14 font-bold">{item.source}</span>
                                     <span class="text-14">{formatDate(item.pubDate)}</span>
                                 </div>
                             </div>
-                            <span class="arrow-icon shrink-0">
-                                <IconArrowExternal class="w-24 h-24" />
+                            <span class="relative top-2 md:static arrow-icon shrink-0">
+                                <IconArrowExternal class="w-28 h-28" />
                             </span>
                         </a>
                     </li>
