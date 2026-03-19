@@ -111,7 +111,9 @@ export const anchorNavigation = {
 
         let scrollTop;
         if($targetElement.dataset.anchorCheckEl){
-            scrollTop = $targetElement.getBoundingClientRect().top + window.scrollY + window.innerHeight - 1;
+            const mobileFactor = parseFloat($targetElement.dataset.anchorSlideFactorMobile ?? 1);
+            const factor = window.innerWidth < 768 ? mobileFactor : 1;
+            scrollTop = $targetElement.getBoundingClientRect().top + window.scrollY + factor * window.innerHeight - 1;
         } else {
             scrollTop = $targetElement.offsetTop - 100;
         }
