@@ -1,190 +1,85 @@
 export const services = {
-    vars: {
-        queries: {
-            component:      '*[data-services]',
-            tile:           '*[data-services-tile]'
-        },
-        attributes: {
-            tileId:         'data-services-tile-id'
-        },
-        classes: {
-            activeTile:     'active'
-        }
-    },
 
-    // Cached DOM references
     _cache: {
-        component: null,
-        swiperElement: null,
-        tiles: null
+        section: null,
+        slides: null,
+        dots: null,
+        counter: null,
+        currentIndex: -1,
+        totalSlides: 0,
     },
 
-    /**
-     * Initializes the services component
-     */
     init() {
-        // Wait for DOM readiness and Swiper initialization
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => this._initialize());
-        } else {
-            this._initialize();
-        }
+        this._cacheDOMElements();
+        if (!this._cache.section) return;
+
+        this._initDotClickHandlers();
+
+        // Set initial state
+        this._onScroll();
+
+        window.addEventListener('scroll', () => this._onScroll(), { passive: true });
     },
 
-    /**
-     * Internal initialization method with Swiper readiness check
-     * @private
-     */
-    _initialize() {
-        // Cache DOM elements
-        if (!this._cacheDOMElements()) {
-            console.warn('Services: Component not found');
-            return;
-        }
-
-        // Wait for Swiper initialization
-        this._waitForSwiper(() => {
-            this._initTileClickHandlers();
-            this._initSwiperSync();
-        });
-    },
-
-    /**
-     * Waits for Swiper initialization
-     * @private
-     */
-    _waitForSwiper(callback) {
-        const checkSwiper = () => {
-            if (this._cache.swiperElement?.swiper) {
-                callback();
-            } else {
-                setTimeout(checkSwiper, 100);
-            }
-        };
-        checkSwiper();
-    },
-
-    /**
-     * Caches DOM elements for better performance
-     * @private
-     * @returns {boolean} true if component was found
-     */
     _cacheDOMElements() {
-        this._cache.component = document.querySelector(this.vars.queries.component);
-        if (!this._cache.component) return false;
+        this._cache.section = document.querySelector('[data-services]');
+        if (!this._cache.section) return;
 
-        this._cache.swiperElement = this._cache.component.querySelector('.swiper');
-        this._cache.tiles = document.querySelectorAll(this.vars.queries.tile);
-
-        return true;
+        this._cache.slides = this._cache.section.querySelectorAll('[data-services-slide]');
+        this._cache.dots   = this._cache.section.querySelectorAll('[data-services-dot]');
+        this._cache.counter = this._cache.section.querySelector('[data-services-counter]');
+        this._cache.totalSlides = this._cache.slides.length;
     },
 
-    /**
-     * Gets the Swiper instance
-     * @private
-     * @returns {Object|null}
-     */
-    _getSwiperInstance() {
-        return this._cache.swiperElement?.swiper || null;
+    _onScroll() {
+        const { section, totalSlides } = this._cache;
+        const scrolled = -section.getBoundingClientRect().top;
+
+        const index = scrolled < 0
+            ? 0
+            : Math.min(Math.floor(scrolled / (window.innerHeight * 1)), totalSlides - 1);
+
+        this._setActiveSlide(index);
     },
 
-    /**
-     * Initializes click handlers for the tiles
-     * @private
-     */
-    _initTileClickHandlers() {
-        const swiper = this._getSwiperInstance();
-        if (!swiper) return;
+    _setActiveSlide(index) {
+        if (index === this._cache.currentIndex) return;
+        this._cache.currentIndex = index;
 
-        this._cache.tiles.forEach(tile => {
-            tile.addEventListener('click', (event) => {
-                event.preventDefault();
-                this._handleTileClick(tile);
+        this._cache.slides.forEach((slide, i) => {
+            slide.classList.toggle('is-active', i === index);
+        });
+
+        this._cache.dots.forEach((dot, i) => {
+            dot.classList.toggle('is-active', i === index);
+        });
+
+        if (this._cache.counter) {
+            const current = String(index + 1).padStart(2, '0');
+            const total   = String(this._cache.totalSlides).padStart(2, '0');
+            this._cache.counter.innerHTML = `${current} <span class="hidden 3xl:inline-block"> / ${total}</span>`;
+        }
+    },
+
+    _initDotClickHandlers() {
+        this._cache.dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                const sectionTop = this._cache.section.getBoundingClientRect().top + window.scrollY;
+                const targetY = sectionTop + index * window.innerHeight * 1;
+                window.scrollTo({ top: targetY, behavior: 'smooth' });
             });
         });
     },
 
-    /**
-     * Handles click on a tile
-     * @private
-     * @param {HTMLElement} tile
-     */
-    _handleTileClick(tile) {
-        const tileId = tile.getAttribute(this.vars.attributes.tileId);
-        if (!tileId) return;
-
-        const slideIndex = parseInt(tileId, 10) - 1;
-        if (isNaN(slideIndex) || slideIndex < 0) return;
-
-        const swiper = this._getSwiperInstance();
-        if (swiper) {
-            swiper.slideTo(slideIndex);
-        }
-    },
-
-    /**
-     * Synchronizes Swiper with the tiles
-     * @private
-     */
-    _initSwiperSync() {
-        const swiper = this._getSwiperInstance();
-        if (!swiper) return;
-
-        // Register slide change event
-        swiper.on('slideChange', () => {
-            this._updateActiveTile(swiper.activeIndex);
-        });
-
-        // Set initial active tile
-        this._updateActiveTile(swiper.activeIndex);
-    },
-
-    /**
-     * Updates the active tile based on the slide index
-     * @private
-     * @param {number} slideIndex - 0-based slide index
-     */
-    _updateActiveTile(slideIndex) {
-        const tileId = slideIndex + 1;
-
-        // Remove active class from all tiles
-        this._cache.tiles.forEach(tile => {
-            tile.classList.remove(this.vars.classes.activeTile);
-        });
-
-        // Add active class to the corresponding tile
-        const activeTile = this._getTileById(tileId);
-        if (activeTile) {
-            activeTile.classList.add(this.vars.classes.activeTile);
-        }
-    },
-
-    /**
-     * Finds a tile by its ID
-     * @private
-     * @param {number} tileId - 1-based tile ID
-     * @returns {HTMLElement|null}
-     */
-    _getTileById(tileId) {
-        return document.querySelector(
-            `${this.vars.queries.tile}[${this.vars.attributes.tileId}="${tileId}"]`
-        );
-    },
-
-    /**
-     * Cleans up event listeners (for cleanup)
-     */
     destroy() {
-        const swiper = this._getSwiperInstance();
-        if (swiper) {
-            swiper.off('slideChange');
-        }
-
-        // Clear cache
+        window.removeEventListener('scroll', this._onScroll);
         this._cache = {
-            component: null,
-            swiperElement: null,
-            tiles: null
+            section: null,
+            slides: null,
+            dots: null,
+            counter: null,
+            currentIndex: -1,
+            totalSlides: 0,
         };
     }
-}
+};
