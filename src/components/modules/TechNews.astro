@@ -72,7 +72,7 @@ function formatDate(str: string) {
 
 <section class="tech-news module" aria-labelledby="tech-news-title" id="tech-news" role="region">
     <div class="grid">
-        <div class="col-span-6 lg:col-span-5">
+        <div class="col-span-6 lg:col-span-5 xl:col-start-2">
             <Flag>Im Netz</Flag>
             <h2 class="mb-20 lg:mb-0" data-scroll-reveal id="tech-news-title">Was die Community<br>gerade bewegt.</h2>
         </div>
@@ -85,7 +85,7 @@ function formatDate(str: string) {
 
     {items.length > 0 && (
         <div class="grid mt-40 lg:mt-55">
-            <ol class="col-span-6 lg:col-span-11 list-none bg-linear-to-b from-full-black to-transparent divide-y-5 divide-white/5">
+            <ol class="col-span-6 lg:col-span-11 xl:col-span-10 xl:col-start-2 list-none bg-linear-to-b from-full-black to-transparent divide-y-5 divide-white/5">
                 {items.map((item) => (
                     <li data-scroll-reveal>
                         <a href={item.link} target="_blank" rel="noopener noreferrer"

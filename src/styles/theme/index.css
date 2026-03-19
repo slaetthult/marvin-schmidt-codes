@@ -66,7 +66,7 @@
     --tracking-1: 0.0625rem; /* 1px */
     --tracking-2: 0.125rem; /* 2px */
 
-    --grid-max-width:               1440px;
+    --grid-max-width:               1920px;
     --spacing:                      0.0625rem;
 
     --default-transition-duration:  400ms;
@@ -77,4 +77,6 @@
     --breakpoint-lg: 1024px;
     --breakpoint-xl: 1280px;
     --breakpoint-2xl: 1440px;
+    --breakpoint-3xl: 1600px;
+    --breakpoint-largest: 1920px;
 }

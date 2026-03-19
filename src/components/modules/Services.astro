@@ -49,9 +49,9 @@ const swiperSettings = {
 
 const swiperSettingsJSON = JSON.stringify(swiperSettings);
 ---
-<section class="module services" id="services" aria-labelledby="services-title" role="region" data-services>
+<section class="module services overflow-hidden" id="services" aria-labelledby="services-title" role="region" data-services>
     <div class="grid">
-        <div class="col-span-6 lg:col-span-5">
+        <div class="col-span-6 lg:col-span-5 xl:col-start-2 2xl:col-span-4 2xl:col-start-3">
             <Flag>Schwerpunkte</Flag>
             <Swiper className="!pt-80" swiperSettings={swiperSettingsJSON}>
                 <div class="swiper-slide">
@@ -123,7 +123,7 @@ const swiperSettingsJSON = JSON.stringify(swiperSettings);
             </Swiper>
         </div>
     </div>
-    <ol class="relative flex items-start h-280 lg:h-400 mx-10 mt-10 ">
+    <ol class="relative flex items-start h-280 lg:h-400 xl:left-90 2xl:left-195 mx-10 mt-10 xl:mt-30 ">
         <li data-image-tilt-effect title="Infos zu Strategie & Konzeption anzeigen" class="flex flex-wrap justify-center content-center absolute top-123 lg:top-0 left-0 lg:left-1/2 lg:-translate-x-1/2 lg:-ml-300 lg:mt-114 lg:w-250 lg:h-215 px-40 py-30 z-3 bg-blue text-black text-center [clip-path:polygon(25%_0%,_75%_0%,_100%_50%,_75%_100%,_25%_100%,_0%_50%)] [&.active]:bg-green hover:bg-green transition-all duration-500 cursor-pointer select-none " data-scroll-reveal data-services-tile data-services-tile-id="2">
             <svg class="block m-auto lg:w-60 lg:h-60 lg:mb-10" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256">
                 <path fill="currentColor" d="M68 152a36 36 0 1 0 36 36a36 36 0 0 0-36-36Zm0 56a20 20 0 1 1 20-20a20 20 0 0 1-20 20ZM34.34 106.34L48.69 92L34.34 77.66a8 8 0 0 1 11.32-11.32L60 80.69l14.34-14.35a8 8 0 0 1 11.32 11.32L71.31 92l14.35 14.34a8 8 0 0 1-11.32 11.32L60 103.31l-14.34 14.35a8 8 0 0 1-11.32-11.32Zm187.32 96a8 8 0 0 1-11.32 11.32L196 199.31l-14.34 14.35a8 8 0 0 1-11.32-11.32L184.69 188l-14.35-14.34a8 8 0 0 1 11.32-11.32L196 176.69l14.34-14.35a8 8 0 0 1 11.32 11.32L207.31 188Zm-45.19-89.51c-6.18 22.33-25.32 41.63-46.53 46.93a8.13 8.13 0 0 1-2 .24a8 8 0 0 1-1.93-15.76c15.63-3.91 30.35-18.91 35-35.68c3.19-11.5 3.22-29-14.71-46.9l-2.3-2.35V80a8 8 0 0 1-16 0V40a8 8 0 0 1 8-8h40a8 8 0 0 1 0 16h-20.69l2.35 2.34c18.24 18.25 24.92 40.44 18.81 62.49Z"/>

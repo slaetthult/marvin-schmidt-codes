@@ -4,9 +4,9 @@ import Button from "@components/partials/Button.astro";
 import Flag from "@components/partials/Flag.astro";
 ---
 
-<section class="hero-intro module !mb-95 lg:!mb-160" aria-labelledby="hero-intro-title" data-hero-intro role="region" id="person">
+<section class="hero-intro module !mb-95 lg:!mb-0 lg:h-[100vh] lg:-mt-275 lg:flex" aria-labelledby="hero-intro-title" data-hero-intro role="region" id="person">
     <div class="grid lg:items-center">
-        <figure class="col-span-5 lg:col-span-4 lg:col-start-2" data-scroll-reveal>
+        <figure class="col-span-5 lg:col-span-5 2xl:col-span-4 2xl:col-start-2 3xl:col-span-3 3xl:col-start-3" data-scroll-reveal>
             <div class="relative -left-10 w-[calc(100%+10px)] lg:left-0 lg:w-full [clip-path:polygon(85%_0%,_100%_50%,_85%_100%,_0%_100%,_15%_50%,_0%_0%)]">
                 <div>
                     <Image
@@ -15,8 +15,12 @@ import Flag from "@components/partials/Flag.astro";
                         height="533"
                         sizes={[
                             {
+                                viewportWidth: 1440,
+                                imageWidth: 456
+                            },
+                            {
                                 viewportWidth: 1024,
-                                imageWidth: 476
+                                imageWidth: 572
                             },
                             {
                                 viewportWidth: 768,
@@ -39,7 +43,7 @@ import Flag from "@components/partials/Flag.astro";
                 </div>
             </div>
         </figure>
-        <div class="col-span-5 mt-30 lg:col-start-7 lg:mt-0">
+        <div class="col-span-5 mt-30 lg:col-start-7 lg:col-span-6 2xl:col-span-5 2xl:col-start-7 3xl:col-span-4 3xl:col-start-7 lg:mt-0">
             <Flag>Über mich</Flag>
             <h1 class="text-green mb-15 bg-gradient-to-r from-green to-red bg-clip-text text-transparent" id="hero-intro-title" data-scroll-reveal>
                 <span>Senior </span>

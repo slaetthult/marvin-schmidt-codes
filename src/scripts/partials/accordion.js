@@ -27,6 +27,7 @@ export const accordion = {
     init(){
         accordion.setInitialAccordionState();
         accordion.addEventListener();
+        accordion.addResizeListener();
     },
 
     addEventListener(){
@@ -60,32 +61,36 @@ export const accordion = {
 
         $accordion.dataset.expanded = expanded ? 'true' : 'false';
 
-        setTimeout(() => {
-            document.querySelectorAll(accordion.vars.queries.component).forEach(($accordionElement) => {
-                const $contentElement = $accordionElement.querySelector(accordion.vars.queries.content);
-                const expandedElement = $accordionElement.dataset.expanded === 'true';
-                if(!expandedElement){
-                    setTimeout(() => {
-                        $contentElement.setAttribute('hidden', 'true');
-                    }, 400);
-                } else {
-                    $contentElement.removeAttribute('hidden');
-                }
+        const isDesktop = window.innerWidth >= 1024;
+
+        if (expanded) {
+            $content.removeAttribute('hidden');
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    if (isDesktop) {
+                        const expandedWidth = $accordion.parentElement.offsetWidth - 98 * 3;
+                        $content.style.width = expandedWidth + 'px';
+                        $content.style.maxHeight = '';
+                    } else {
+                        $content.style.width = '';
+                        $content.style.maxHeight = $content.scrollHeight + 'px';
+                    }
+                });
             });
-
+        } else {
+            if (isDesktop) {
+                $content.style.width = '0';
+                $content.style.maxHeight = '';
+            } else {
+                $content.style.width = '';
+                $content.style.maxHeight = '0';
+            }
             setTimeout(() => {
-                if(window.innerWidth >= 1024){
-                    const $wrapperElement = document.querySelector('.skills').querySelector('.grid');
-                    const expandedWidth = $wrapperElement.offsetWidth - 98 - 98 - 98 - 40;
-                    $content.style.width = expanded ? (expandedWidth + 'px') : '0';
-                    $content.style.maxHeight = '';
-                } else {
-                    $content.style.width = '';
-                    $content.style.maxHeight = expanded ? ($content.scrollHeight + 'px') : '0';
+                if ($accordion.dataset.expanded === 'false') {
+                    $content.setAttribute('hidden', 'true');
                 }
-            }, 20);
-
-        }, 10);
+            }, 400);
+        }
 
     },
 
@@ -96,7 +101,7 @@ export const accordion = {
 
         // Only close accordion components that share the same parent (i.e., siblings)
         $parent.querySelectorAll(accordion.vars.queries.component).forEach(($item) => {
-            if ($item !== $current) accordion.setAccordionState($item, false);
+            if ($item !== $current) setTimeout(() => accordion.setAccordionState($item, false), 2);
         });
     },
 
@@ -108,6 +113,28 @@ export const accordion = {
         const isExpanded = $accordion.dataset.expanded === 'true';
         accordion.closeSiblingsExcept($accordion);
         accordion.setAccordionState($accordion, !isExpanded);
+    },
+
+    addResizeListener() {
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                document.querySelectorAll(accordion.vars.queries.component).forEach(($accordion) => {
+                    const $content = $accordion.querySelector(accordion.vars.queries.content);
+                    if (!$content || $accordion.dataset.expanded !== 'true') return;
+
+                    if (window.innerWidth >= 1024) {
+                        const expandedWidth = $accordion.parentElement.offsetWidth - 98 * 3;
+                        $content.style.width = expandedWidth + 'px';
+                        $content.style.maxHeight = '';
+                    } else {
+                        $content.style.width = '';
+                        $content.style.maxHeight = $content.scrollHeight + 'px';
+                    }
+                });
+            }, 100);
+        });
     },
 
     setInitialAccordionState() {

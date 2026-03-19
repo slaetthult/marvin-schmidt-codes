@@ -37,9 +37,15 @@
         100% { background-position: 0 20%; }
     }
 
+    @keyframes bg-pan-tablet {
+        0% { background-position: 30% 20%; }
+        50% { background-position: 40% 20%; }
+        100% { background-position: 30% 20%; }
+    }
+
     @keyframes bg-pan-desktop {
         0% { background-position: 0 20%; }
-        50% { background-position: 100% 20%; }
+        50% { background-position: 90% 20%; }
         100% { background-position: 0 20%; }
     }
 
@@ -48,6 +54,9 @@
         animation: bg-pan-mobile 10s ease infinite;
 
         @media screen and (min-width: 768px) {
+            animation: bg-pan-tablet 10s ease infinite;
+        }
+        @media screen and (min-width: 1024px) {
             animation: bg-pan-desktop 10s ease infinite;
         }
     }
