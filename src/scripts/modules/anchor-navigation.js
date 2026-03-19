@@ -6,7 +6,7 @@ export const anchorNavigation = {
         queries: {
             component: '*[data-anchor-navigation]'
         },
-        isAtTopOfViewportOffset: 100
+        isAtTopOfViewportOffset: 250
     },
     init(){
         anchorNavigation.addEventTrigger();
