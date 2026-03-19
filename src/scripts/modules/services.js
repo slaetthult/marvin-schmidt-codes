@@ -31,13 +31,17 @@ export const services = {
         this._cache.totalSlides = this._cache.slides.length;
     },
 
+    _getScrollFactor() {
+        return window.innerWidth < 768 ? 0.5 : 1;
+    },
+
     _onScroll() {
         const { section, totalSlides } = this._cache;
         const scrolled = -section.getBoundingClientRect().top;
 
         const index = scrolled < 0
             ? 0
-            : Math.min(Math.floor(scrolled / (window.innerHeight * 1)), totalSlides - 1);
+            : Math.min(Math.floor(scrolled / (window.innerHeight * this._getScrollFactor())), totalSlides - 1);
 
         this._setActiveSlide(index);
     },
@@ -65,7 +69,7 @@ export const services = {
         this._cache.dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 const sectionTop = this._cache.section.getBoundingClientRect().top + window.scrollY;
-                const targetY = sectionTop + index * window.innerHeight * 1;
+                const targetY = sectionTop + (index + 0.5) * window.innerHeight * this._getScrollFactor();
                 window.scrollTo({ top: targetY, behavior: 'smooth' });
             });
         });
