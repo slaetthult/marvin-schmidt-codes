@@ -63,7 +63,7 @@ const totalLabel = String(totalSlides).padStart(2, '0');
             <nav class="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col p-0" aria-label="Schwerpunkte Navigation">
                 {slides.map((slide, index) => (
                     <button
-                        class={`flex items-center justify-center w-44 h-44 bg-transparent border-0 cursor-pointer p-0 after:content-[''] after:block after:w-8 after:h-8 after:bg-white after:[transition:background-color_300ms_ease,transform_300ms_ease] [&.is-active]:after:bg-red [&.is-active]:after:scale-150${index === 0 ? ' is-active' : ''}`}
+                        class={`flex items-center justify-center w-44 h-44 bg-transparent border-0 cursor-pointer p-0 after:content-[''] after:block after:w-8 after:h-8 after:bg-white after:[transition:background-color_300ms_ease,transform_300ms_ease] [&.is-active]:after:bg-green [&.is-active]:after:scale-150${index === 0 ? ' is-active' : ''}`}
                         data-services-dot
                         data-index={index}
                         aria-label={slide.title}
