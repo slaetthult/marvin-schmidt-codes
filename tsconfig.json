@@ -5,6 +5,7 @@
     "jsx": "preserve",
     "paths": {
       "@components/*": ["./src/components/*"],
+      "@storyblokComponents/*": ["./src/storyblok/components/*"],
       "@layouts/*": ["./src/layouts/*"],
       "@json/*": ["./json/*"],
       "@root/*": ["./src/*"],

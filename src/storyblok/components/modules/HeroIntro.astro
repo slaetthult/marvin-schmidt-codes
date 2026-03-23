@@ -1,0 +1,72 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+import RichText from "@storyblokComponents/partials/RichText.astro";
+import SbButton from "@storyblokComponents/partials/Button.astro";
+import Image from "@components/partials/Image.astro";
+import Flag from "@components/partials/Flag.astro";
+
+const { blok } = Astro.props;
+---
+<section {...storyblokEditable(blok)} class="hero-intro module !mb-95 lg:!mb-0 lg:h-[100vh] lg:-mt-350 3xl:-mt-400 lg:flex" aria-labelledby="hero-intro-title" data-hero-intro role="region" id="person">
+    <div class="grid lg:items-center">
+        <figure class="col-span-5 lg:col-span-5 2xl:col-span-4 2xl:col-start-2 3xl:col-span-3 3xl:col-start-3" data-scroll-reveal>
+            <div class="relative -left-10 w-[calc(100%+10px)] lg:left-0 lg:w-full [clip-path:polygon(85%_0%,_100%_50%,_85%_100%,_0%_100%,_15%_50%,_0%_0%)]">
+                <div>
+                    <Image
+                        src="/images/marvin_schmidt_profile.jpg"
+                        width="333"
+                        height="533"
+                        sizes={[
+                            {
+                                viewportWidth: 1440,
+                                imageWidth: 455
+                            },
+                            {
+                                viewportWidth: 1024,
+                                imageWidth: 572
+                            },
+                            {
+                                viewportWidth: 768,
+                                imageWidth: 844
+                            },
+                            {
+                                viewportWidth: 450,
+                                imageWidth: 454
+                            },
+                            {
+                                viewportWidth: 320,
+                                imageWidth: 333
+                            }
+                        ]}
+                        loading="eager"
+                        className="scale-100"
+                        fetchPriority="high"
+                        alt="Schwarz-weißes Porträt einer Person mit kurzem, leicht gewelltem Haar, direktem Blick und ruhigem Ausdruck vor hellem, neutralem Hintergrund."
+                    />
+                </div>
+            </div>
+        </figure>
+        <div class="col-span-5 mt-30 lg:col-start-7 lg:col-span-6 2xl:col-span-5 2xl:col-start-7 3xl:col-span-4 3xl:col-start-7 lg:mt-0">
+            <Flag>{blok.preline}</Flag>
+            <h1 class="text-green mb-15 bg-gradient-to-r from-green to-red bg-clip-text text-transparent" id="hero-intro-title" data-scroll-reveal>
+                <span>{blok.titleWord1} </span>
+                <span>{blok.titleWord2}  </span>
+                <span>{blok.titleWord3}</span>
+            </h1>
+            <p class="mt-9 lg:mt-30" data-scroll-reveal>
+                <RichText content={blok.text} />
+            </p>
+            {blok.button?.map((btn: any) => (
+                <SbButton blok={btn} className="mt-18 lg:mt-28" />
+            ))}
+        </div>
+    </div>
+</section>
+
+<script>
+    import { lazyLoadWhenIdle } from '@scripts/utils/lazy-load-when-idle';
+    lazyLoadWhenIdle(() => import('@scripts/modules/hero-intro.js'), {
+        selector: '*[data-hero-intro]',
+        onLoad: ({ heroIntro }) => heroIntro?.init?.()
+    });
+</script>

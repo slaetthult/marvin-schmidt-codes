@@ -6,7 +6,15 @@ import robotsTxt from 'astro-robots-txt';
 import robotsConfig from './robots-txt.config';
 import tailwindcss from '@tailwindcss/vite';
 import dotenv from 'dotenv';
-
+import { defineConfig } from 'astro/config';
+import { storyblok } from '@storyblok/astro';
+import { loadEnv } from 'vite';
+const env = loadEnv('', process.cwd(), 'STORYBLOK');
+const { STORYBLOK_DELIVERY_API_TOKEN } = loadEnv(
+    import.meta.env.MODE,
+    process.cwd(),
+    '',
+);
 dotenv.config();
 
 // https://astro.build/config
@@ -21,7 +29,19 @@ export default defineConfig({
             target: 'es2019'
         }
     },
-    integrations: [alpine(), sitemap(), robotsTxt(robotsConfig)],
+    integrations: [alpine(), sitemap(), robotsTxt(robotsConfig),
+        storyblok({
+            accessToken: env.STORYBLOK_DELIVERY_API_TOKEN,
+            apiOptions: {
+                region: 'eu',
+            },
+            components: {
+                page: 'storyblok/components/base/Page',
+                heroIntro: 'storyblok/components/modules/HeroIntro',
+            },
+        })
+
+    ],
     prefetch: {
         prefetchAll: true,
         defaultStrategy: 'viewport'

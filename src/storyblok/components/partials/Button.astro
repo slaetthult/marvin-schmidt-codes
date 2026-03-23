@@ -1,0 +1,8 @@
+---
+import Button from "@components/partials/Button.astro";
+
+const { blok, ...props } = Astro.props;
+const href = blok.link?.cached_url || blok.link?.url;
+---
+
+<Button {href} title={blok.label} icon={blok.icon} {...props}>{blok.label}</Button>

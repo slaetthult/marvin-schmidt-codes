@@ -7,6 +7,15 @@ import CV from "@components/modules/CV.astro";
 import ShortFacts from "@components/modules/ShortFacts.astro";
 import Services from "@components/modules/Services.astro";
 import TechNews from "@components/modules/TechNews.astro";
+import { useStoryblokApi } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+
+const storyblokApi = useStoryblokApi()
+const { data } = await storyblokApi.get("cdn/stories/home", {
+    version: "draft",
+});
+
+const { story } = data;
 ---
 
 <Layout title="Marvin Schmidt - Senior Frontend Developer">
@@ -27,7 +36,9 @@ import TechNews from "@components/modules/TechNews.astro";
             imagesizes="(min-width: 1024px) 476px, (min-width: 768px) 844px, (min-width: 450px) 454px, 333px"
         />
     </Fragment>
-    <HeroIntro />
+
+    <StoryblokComponent blok={story.content} />
+
     <AnchorNavigation />
     <ShortFacts/>
     <Services/>
