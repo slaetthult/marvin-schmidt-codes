@@ -35,6 +35,7 @@ export default defineConfig({
             apiOptions: {
                 region: 'eu',
             },
+            bridge: import.meta.env.DEV,
             components: {
                 page: 'storyblok/components/base/Page',
                 heroIntro: 'storyblok/components/modules/HeroIntro',
